@@ -31,12 +31,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/emailaddress"
+        android:id="@+id/loginusn"
         android:layout_width="352dp"
         android:layout_height="56dp"
         android:layout_marginTop="88dp"
         android:ems="10"
-        android:hint="Email Address"
+        android:hint="Usn"
         android:inputType="textPersonName"
         android:textColorHint="@color/black"
         android:textSize="18sp"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailaddress" />
+        app:layout_constraintTop_toBottomOf="@+id/loginusn" />
 
     <Button
         android:id="@+id/loginbtn"
