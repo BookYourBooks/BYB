@@ -2,14 +2,15 @@ package com.example.byb;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.DragStartHelper;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,26 +21,32 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import Prevalent.Prevalent;
+import io.paperdb.Paper;
 import model.users;
 
 
 public class MainActivity extends AppCompatActivity {
     TextView register,forgotpassword,admin,notanadmin;
     Button loginbtn;
-    EditText emailaddress,userpassword;
+    EditText loginusn,userpassword;
     private DatabaseReference RootRef;
     private ProgressDialog loadingBar;
+    private CheckBox rememberme;
     private  String ParentDbName="users";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        emailaddress=findViewById(R.id.emailaddress);
+        loginusn =findViewById(R.id.loginusn);
         userpassword=findViewById(R.id.userpassword);
         loadingBar = new ProgressDialog(this);
         register=(TextView)findViewById(R.id.userregister);
         forgotpassword=(TextView)findViewById(R.id.forgotpassword);
         loginbtn=findViewById((R.id.loginbtn));
+
+
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }public void loginuser(){
-         String usn= emailaddress.getText().toString().trim();
+         String usn= loginusn.getText().toString().trim();
          String password = userpassword.getText().toString().trim();
         if (TextUtils.isEmpty(usn)) {
-            emailaddress.setError("Email is required");
+            loginusn.setError("Email is required");
             return;
         }
 
@@ -80,13 +87,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void Allowaccesstoaccount( String usn, String password){
+
         RootRef=FirebaseDatabase.getInstance().getReference();
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull  DataSnapshot dataSnapshot) {
                 if (dataSnapshot.child(ParentDbName).child(usn).child("password").exists()){
                     users usersdata=dataSnapshot.child(ParentDbName).child(usn).getValue(users.class);
-                    if(usersdata.getEmail().equals(usn)) {
+                    if(usersdata.getUsn().equals(usn)) {
                         if (usersdata.getPassword().equals(password)) {
                             if (ParentDbName.equals("users")) {
 
