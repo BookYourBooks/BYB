@@ -2,6 +2,7 @@ package com.example.byb;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.DragStartHelper;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import Prevalent.Prevalent;
+import io.paperdb.Paper;
 import model.users;
 
 
@@ -28,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     EditText loginusn,userpassword;
     private DatabaseReference RootRef;
     private ProgressDialog loadingBar;
+    private CheckBox rememberme;
     private  String ParentDbName="users";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         register=(TextView)findViewById(R.id.userregister);
         forgotpassword=(TextView)findViewById(R.id.forgotpassword);
         loginbtn=findViewById((R.id.loginbtn));
+
+
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void Allowaccesstoaccount( String usn, String password){
+
         RootRef=FirebaseDatabase.getInstance().getReference();
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
