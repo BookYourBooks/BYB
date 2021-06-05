@@ -6,4 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".AdminStationaryActivity">
 
+    <RelativeLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/slogancategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Add New Product"
+            android:textSize="26sp"
+            android:textAlignment="center"
+            android:textColor="@color/purple_500"
+            android:textStyle="bold"
+            android:gravity="center_horizontal" />
+        <LinearLayout
+            android:id="@+id/layoutcategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/slogancategory"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="45dp">
+
+            <ImageView
+                android:id="@+id/pen"
+                android:layout_width="204dp"
+                android:layout_height="80dp"
+                android:src="@drawable/pen" />
+            <ImageView
+                android:id="@+id/notebook"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:src="@drawable/notebook"
+                />
+        </LinearLayout>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

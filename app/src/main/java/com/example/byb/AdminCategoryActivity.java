@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -13,6 +14,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("AdminCategoryActivity","Successes");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_category);
         stationary=findViewById(R.id.stationary);
