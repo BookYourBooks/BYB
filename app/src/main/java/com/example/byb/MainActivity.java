@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,15 +45,10 @@ public class MainActivity extends AppCompatActivity {
         register=(TextView)findViewById(R.id.userregister);
         forgotpassword=(TextView)findViewById(R.id.forgotpassword);
         loginbtn=findViewById((R.id.loginbtn));
+        admin=(TextView)findViewById(R.id.admin);
+        notanadmin=(TextView)findViewById(R.id.notanadmin);
 
 
-
-        loginbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginuser();
-            }
-        });
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,12 +56,39 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                loginbtn.setText("Login Admin");
+                admin.setVisibility(View.INVISIBLE);
+                notanadmin.setVisibility(View.VISIBLE);
+                ParentDbName="admins";
+            }
+        });
+
+        notanadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                loginbtn.setText("Login");
+                admin.setVisibility(View.VISIBLE);
+                notanadmin.setVisibility(View.INVISIBLE);
+                ParentDbName = "users";
+            }
+        });
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginuser();
+            }
+        });
 
     }public void loginuser(){
          String usn= loginusn.getText().toString().trim();
          String password = userpassword.getText().toString().trim();
         if (TextUtils.isEmpty(usn)) {
-            loginusn.setError("Email is required");
+            loginusn.setError("USN is required");
             return;
         }
 
@@ -92,27 +115,42 @@ public class MainActivity extends AppCompatActivity {
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull  DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child(ParentDbName).child(usn).child("password").exists()){
-                    users usersdata=dataSnapshot.child(ParentDbName).child(usn).getValue(users.class);
-                    if(usersdata.getUsn().equals(usn)) {
-                        if (usersdata.getPassword().equals(password)) {
-                            if (ParentDbName.equals("users")) {
+                if (dataSnapshot.child(ParentDbName).child(usn).exists())
+                {
+                    users usersData = dataSnapshot.child(ParentDbName).child(usn).getValue(users.class);
 
-
-                                Toast.makeText(MainActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                    if (usersData.getUsn().equals(usn))
+                    {
+                        if (usersData.getPassword().equals(password))
+                        {
+                            if (ParentDbName.equals("admins"))
+                            {
+                                Toast.makeText(MainActivity.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
+
+                                Intent intent = new Intent(MainActivity.this, AdminCategoryActivity.class);
+                                startActivity(intent);
+                            }
+                            else if (ParentDbName.equals("users"))
+                            {
+                                Toast.makeText(MainActivity.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
+
                                 Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                                 startActivity(intent);
                             }
                         }
+                        else
+                        {
+                            loadingBar.dismiss();
+                            Toast.makeText(MainActivity.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
+                        }
                     }
-
-
                 }
-                else{
-                    Toast.makeText(MainActivity.this, "This " + usn + " usn do not exists.", Toast.LENGTH_SHORT).show();
+                else
+                {
+                    Toast.makeText(MainActivity.this, "Account with this " + usn + " number do not exists.", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
-                    Toast.makeText(MainActivity.this, "Please try again using another usn.", Toast.LENGTH_SHORT).show();
                 }
 
             }
