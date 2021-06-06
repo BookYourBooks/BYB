@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
         register=(TextView)findViewById(R.id.userregister);
         forgotpassword=(TextView)findViewById(R.id.forgotpassword);
-        loginbtn=findViewById((R.id.loginbtn));
+        //loginbtn=findViewById((R.id.loginbtn));
 
 
 
