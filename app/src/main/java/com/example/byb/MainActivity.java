@@ -28,7 +28,7 @@ import model.users;
 
 
 public class MainActivity extends AppCompatActivity {
-    TextView register,forgotpassword,admin,notanadmin;
+    TextView register,forgotpassword,admin,notanadmin,usersignin;
     Button loginbtn;
     EditText loginusn,userpassword;
     private DatabaseReference RootRef;
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        usersignin=findViewById(R.id.usersignin);
         loginusn =findViewById(R.id.loginusn);
         userpassword=findViewById(R.id.userpassword);
         loadingBar = new ProgressDialog(this);
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 loginbtn.setText("Login Admin");
+                usersignin.setText("Admin Sign in");
                 admin.setVisibility(View.INVISIBLE);
                 notanadmin.setVisibility(View.VISIBLE);
                 ParentDbName="admins";
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 loginbtn.setText("Login");
+                usersignin.setText("User Sign in");
                 admin.setVisibility(View.VISIBLE);
                 notanadmin.setVisibility(View.INVISIBLE);
                 ParentDbName = "users";
@@ -136,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
+                                Prevalent.currentonlineusers = usersData;
                                 Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                                 startActivity(intent);
                             }

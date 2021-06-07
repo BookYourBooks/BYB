@@ -5,140 +5,124 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="291dp"
-        android:layout_height="303dp"
-        android:layout_marginTop="4dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bmsitlogo" />
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="291dp"
+            android:layout_height="303dp"
+            android:layout_marginTop="4dp"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/bmsitlogo" />
 
-    <TextView
-        android:id="@+id/usersignup"
-        android:layout_width="194dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="24dp"
-        android:text="User Sign Up"
-        android:textColor="@color/purple_700"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <TextView
+            android:id="@+id/usersignin"
+            android:layout_width="194dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/imageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="User Sign  in"
+            android:textColor="@color/purple_700"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <EditText
+            android:id="@+id/loginusn"
+            android:layout_width="352dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/usersignin"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="Usn"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/black"
+            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/userpassword"
+            android:layout_width="352dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/loginusn"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/black" />
 
-    <EditText
-        android:id="@+id/loginusn"
-        android:layout_width="352dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="88dp"
-        android:ems="10"
-        android:hint="Usn"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <LinearLayout
+            android:layout_width="128dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/userpassword">
 
-    <EditText
-        android:id="@+id/userpassword"
-        android:layout_width="352dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginusn" />
+            <com.rey.material.widget.CheckBox
+                android:id="@+id/rememberme"
+                style="@style/Material.Drawable.CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:shadowColor="#FFFFFF"
+                android:text="Remember me"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
-    <Button
-        android:id="@+id/loginbtn"
-        android:layout_width="352dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/log_in"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userpassword" />
-
-    <TextView
-        android:id="@+id/forgotpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="28dp"
-        android:text="Forgot Password?"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbtn" />
-
-    <TextView
-        android:id="@+id/admin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginLeft="96dp"
-        android:text="I'm an Admin?"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/notanadmin"
-        app:layout_constraintTop_toTopOf="@+id/notanadmin" />
-
-    <TextView
-        android:id="@+id/notanadmin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="32dp"
-        android:text="I'm not an Admin"
-        android:textColor="@color/black"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotpassword" />
-
-    <TextView
-        android:id="@+id/userregister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:text="Register"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/forgotpassword"
-        app:layout_constraintTop_toTopOf="@+id/forgotpassword" />
-
-    <LinearLayout
-        android:layout_width="128dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="5dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userpassword">
-
-        <com.rey.material.widget.CheckBox
-            android:id="@+id/rememberme"
-            style="@style/Material.Drawable.CheckBox"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:shadowColor="#FFFFFF"
-            android:text="Remember me"
-            android:gravity="center_vertical"
+        </LinearLayout>
+        <Button
+            android:id="@+id/loginbtn"
+            android:layout_width="352dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/userpassword"
+            android:text="@string/log_in" />
+        <TextView
+            android:id="@+id/userregister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="270dp"
+            android:text="Register"
             android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:layout_below="@id/loginbtn"
+            android:layout_marginTop="25dp"/>
+        <TextView
+            android:id="@+id/forgotpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginbtn"
+            android:layout_marginStart="56dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="25dp"
+            android:text="Forgot Password?"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userregister"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="260dp"
+            android:text="I'm an Admin?"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/notanadmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forgotpassword"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="40dp"
+            android:text="I'm not an Admin"
+            android:textColor="@color/black"
+            android:visibility="invisible" />
 
 
-    </LinearLayout>
-
+        ></RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
