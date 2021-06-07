@@ -1,7 +1,7 @@
 package model;
 
 public class users {
-    private String branch,email,mobileno,name,password,usn;
+    private String branch,email,mobileno,name,password,usn,image;
     public users(){
 
     }
@@ -13,6 +13,7 @@ public class users {
         this.name = name;
         this.password = password;
         this.usn = usn;
+        this.image=image;
     }
 
     public String getBranch() {
@@ -61,5 +62,13 @@ public class users {
 
     public void setUsn(String usn) {
         this.usn = usn;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
