@@ -37,6 +37,7 @@
             android:layout_width="352dp"
             android:layout_height="56dp"
             android:layout_marginTop="20dp"
+            android:maxLength="10"
             android:layout_below="@id/usersignin"
             android:layout_centerHorizontal="true"
             android:ems="10"
@@ -110,7 +111,7 @@
             android:layout_below="@id/userregister"
             android:layout_marginTop="40dp"
             android:layout_marginLeft="260dp"
-            android:text="I'm an Admin?"
+            android:text="Admin Login?"
             android:textColor="@color/black" />
         <TextView
             android:id="@+id/notanadmin"
@@ -119,7 +120,7 @@
             android:layout_below="@id/forgotpassword"
             android:layout_marginLeft="56dp"
             android:layout_marginTop="40dp"
-            android:text="I'm not an Admin"
+            android:text="User Login?"
             android:textColor="@color/black"
             android:visibility="invisible" />
 
