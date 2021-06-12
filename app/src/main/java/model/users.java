@@ -1,7 +1,7 @@
 package model;
 
 public class users {
-    private String branch,email,mobileno,name,password,usn,image;
+    private String branch,email,mobileno,name,password,usn,image,sec;
     public users(){
 
     }
@@ -14,6 +14,15 @@ public class users {
         this.password = password;
         this.usn = usn;
         this.image=image;
+        this.sec=sec;
+    }
+
+    public String getSec() {
+        return sec;
+    }
+
+    public void setSec(String sec) {
+        this.sec = sec;
     }
 
     public String getBranch() {
