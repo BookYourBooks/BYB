@@ -25,7 +25,6 @@ public class AdminStationaryActivity extends AppCompatActivity {
         pen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AdminStationaryActivity.this,"pen click successful",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(AdminStationaryActivity.this, AdminAddNewProductActivity.class);
                 intent.putExtra("category", "pen");
                 startActivity(intent);
