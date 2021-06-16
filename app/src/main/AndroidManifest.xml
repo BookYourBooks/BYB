@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB">
-        <activity android:name=".user_record"></activity>
+        <activity android:name=".home_activity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.BYB.NoActionBar"></activity>
+        <activity android:name=".user_record" />
         <activity android:name=".user_bluebooks" />
         <activity android:name=".user_files" />
         <activity android:name=".user_sheets" />
@@ -27,10 +30,7 @@
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-        <activity
-            android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.BYB.NoActionBar" />
+
         <activity android:name=".AdminAddNewProductActivity" />
         <activity android:name=".AdminStationaryActivity" />
         <activity android:name=".AdminCategoryActivity" />
