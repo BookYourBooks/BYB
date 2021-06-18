@@ -1,4 +1,4 @@
-package model;
+package com.example.byb.model;
 
 public class users {
     private String branch,email,mobileno,name,password,usn,image,sec;

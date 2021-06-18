@@ -1,6 +1,7 @@
 package com.example.byb;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,33 +13,74 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AdminStationaryActivity extends AppCompatActivity {
-    private ImageView pen,notebook;
+    private CardView notebooks,accessories,sheets,files,bluebooks,record;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_stationary);
-        pen=findViewById(R.id.pen);
-        notebook=(ImageView)findViewById(R.id.notebook);
+        notebooks=findViewById(R.id.admin_stationery_notebooks);
+        accessories=findViewById(R.id.admin_stationery_accesories);
+        sheets=findViewById(R.id.admin_stationery_a4sheets);
+        files=findViewById(R.id.admin_stationery_files);
+        bluebooks=findViewById(R.id.admin_stationery_bluebooks);
+        record=findViewById(R.id.admin_stationery_record);
 
-        pen.setOnClickListener(new View.OnClickListener() {
+        notebooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminStationaryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "pen");
+                intent.putExtra("category", "NoteBooks");
                 startActivity(intent);
             }
         });
 
-        notebook.setOnClickListener(new View.OnClickListener() {
+        accessories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminStationaryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "notebook");
+                intent.putExtra("category", "Accessories");
                 startActivity(intent);
             }
         });
+
+        sheets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminStationaryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "A4Sheets");
+                startActivity(intent);
+            }
+        });
+
+        files.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminStationaryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "Files");
+                startActivity(intent);
+            }
+        });
+
+        bluebooks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminStationaryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "Blue Books");
+                startActivity(intent);
+            }
+        });
+
+        record.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminStationaryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "BMSIT Record");
+                startActivity(intent);
+            }
+        });
+
 
     }
 
