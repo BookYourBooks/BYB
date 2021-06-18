@@ -1,6 +1,6 @@
-package Prevalent;
+package com.example.byb.Prevalent;
 
-import model.users;
+import com.example.byb.model.users;
 
 public class Prevalent {
     public static users currentonlineusers;

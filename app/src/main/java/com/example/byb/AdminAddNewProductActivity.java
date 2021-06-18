@@ -30,6 +30,7 @@ import com.google.firebase.storage.UploadTask;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class AdminAddNewProductActivity extends AppCompatActivity {
   private String categoryname,pname,description,price,saveCurrentDate, saveCurrentTime;
@@ -55,7 +56,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
         categoryname=getIntent().getExtras().get("category").toString();
         ProductImagesRef= FirebaseStorage.getInstance().getReference().child("Product Images");
-        ProductRef= FirebaseDatabase.getInstance().getReference().child("Stationary Products");
+        ProductRef= FirebaseDatabase.getInstance().getReference().child(categoryname);
 
 
         loadingBar = new ProgressDialog(this);
@@ -191,7 +192,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         productMap.put("price", price);
         productMap.put("pname", pname);
 
-        ProductRef.child(productRandomKey).updateChildren(productMap)
+        ProductRef.child(categoryname).updateChildren(productMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull  Task<Void> task) {

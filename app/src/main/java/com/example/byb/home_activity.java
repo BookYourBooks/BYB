@@ -1,7 +1,6 @@
 package com.example.byb;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -13,20 +12,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
-import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
-import org.jetbrains.annotations.NotNull;
-
-import Prevalent.Prevalent;
+import com.example.byb.Prevalent.Prevalent;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class home_activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,7 +29,7 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     private Button btnToggleDark;
-    private CardView home_stationery,home_textbooks,home_lab_manual,home_forms;
+    private LinearLayout home_stationery,home_textbooks,home_lab_manual,home_forms;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
