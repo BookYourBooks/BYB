@@ -192,7 +192,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         productMap.put("price", price);
         productMap.put("pname", pname);
 
-        ProductRef.child(categoryname).updateChildren(productMap)
+        ProductRef.child(productRandomKey).updateChildren(productMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull  Task<Void> task) {
