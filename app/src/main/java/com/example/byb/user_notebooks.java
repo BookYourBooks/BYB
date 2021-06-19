@@ -1,5 +1,6 @@
 package com.example.byb;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -40,7 +41,7 @@ public class user_notebooks extends AppCompatActivity {
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        ProductRef= FirebaseDatabase.getInstance().getReference().child("NoteBooks");
+        ProductRef= FirebaseDatabase.getInstance().getReference().child(Category);
     }
 
     @Override
@@ -48,8 +49,8 @@ public class user_notebooks extends AppCompatActivity {
         super.onStart();
         FirebaseRecyclerOptions<Stationary_product> options=
                 new FirebaseRecyclerOptions.Builder<Stationary_product>()
-                .setQuery(ProductRef,Stationary_product.class)
-                .build();
+                        .setQuery(ProductRef,Stationary_product.class)
+                        .build();
         ProductRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -58,14 +59,14 @@ public class user_notebooks extends AppCompatActivity {
                             @Override
                             protected void onBindViewHolder(@NonNull  ProductViewHolder holder, int i, @NonNull  Stationary_product stationary_product) {
 
-                                Stationary_product statproduct=snapshot.child("NoteBooks").getValue(Stationary_product.class);
+                                Stationary_product statproduct=snapshot.child(Category).getValue(Stationary_product.class);
 
 
 
-                                    holder.productname.setText(stationary_product.getPname());
-                                    holder.productdescription.setText(stationary_product.getDescription());
-                                    holder.productprice.setText("Price = " + stationary_product.getPrice() + "Rs");
-                                    Picasso.get().load(stationary_product.getImage()).into(holder.productimage);
+                                holder.productname.setText(stationary_product.getPname());
+                                holder.productdescription.setText(stationary_product.getDescription());
+                                holder.productprice.setText("Price = " + stationary_product.getPrice() + "Rs");
+                                Picasso.get().load(stationary_product.getImage()).into(holder.productimage);
 
                             }
 
