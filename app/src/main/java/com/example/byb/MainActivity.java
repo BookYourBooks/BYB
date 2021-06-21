@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent intent = new Intent(MainActivity.this, AdminCategoryActivity.class);
+                                Intent intent = new Intent(MainActivity.this, AdminAddActivity.class);
                                 startActivity(intent);
                             }
                             else if (ParentDbName.equals("users"))
