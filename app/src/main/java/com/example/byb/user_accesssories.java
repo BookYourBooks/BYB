@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,6 +68,18 @@ public class user_accesssories extends AppCompatActivity {
                                 holder.productdescription.setText(stationary_product.getDescription());
                                 holder.productprice.setText("Price = " + stationary_product.getPrice() + "Rs");
                                 Picasso.get().load(stationary_product.getImage()).into(holder.productimage);
+                                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(user_accesssories.this,user_product_detail_activity.class);
+                                        intent.putExtra("pid",stationary_product.getPid());
+                                        intent.putExtra("category","Accessories");
+                                        startActivity(intent);
+
+
+
+                                    }
+                                });
 
                             }
 
