@@ -80,8 +80,7 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId())
                 {
-                    case  R.id.nav_cart:Intent intent1 = new Intent(home_activity.this , user_product_detail_activity.class);
-                        startActivity(intent1);
+                    case  R.id.nav_cart:
                         break;
 
 
