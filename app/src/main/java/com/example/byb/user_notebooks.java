@@ -74,6 +74,7 @@ public class user_notebooks extends AppCompatActivity {
                                     public void onClick(View v) {
                                         Intent intent = new Intent(user_notebooks.this,user_product_detail_activity.class);
                                         intent.putExtra("pid",stationary_product.getPid());
+                                        intent.putExtra("category","NoteBooks");
                                         startActivity(intent);
 
 

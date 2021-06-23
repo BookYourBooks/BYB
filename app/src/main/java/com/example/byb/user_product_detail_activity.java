@@ -30,6 +30,7 @@ public class user_product_detail_activity extends AppCompatActivity {
     private ElegantNumberButton numberButton;
     private TextView productPrice, productDescription, productName;
     private String productID = "";
+    private String category="";
 
 
 
@@ -39,6 +40,7 @@ public class user_product_detail_activity extends AppCompatActivity {
         setContentView(R.layout.activity_user_product_detail);
 
         productID = getIntent().getStringExtra("pid");
+        category=getIntent().getStringExtra("category");
 
        // addToCardBtn = (FloatingActionButton) findViewById(R.id.add_to_cart);
        numberButton = (ElegantNumberButton) findViewById(R.id.number_btn);
@@ -53,7 +55,7 @@ public class user_product_detail_activity extends AppCompatActivity {
     }
 
     private void getProductDetails(String productID) {
-        DatabaseReference productref = FirebaseDatabase.getInstance().getReference().child("NoteBooks");
+        DatabaseReference productref = FirebaseDatabase.getInstance().getReference().child(category);
 
         productref.child(productID).addValueEventListener(new ValueEventListener() {
             @Override
