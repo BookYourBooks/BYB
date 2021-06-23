@@ -44,7 +44,7 @@ public class Stationary_product {
         this.price = price;
     }
 
-    public String getImage() {
+    public static String getImage() {
         return image;
     }
 

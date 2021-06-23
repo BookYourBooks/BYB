@@ -64,11 +64,15 @@
         android:layout_marginTop="10dp"
         />
 
+
+
+
+
     <Button
         android:id="@+id/pd_cart_btn_cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:backgroundTint="@color/purple_700"
         android:layout_margin="15dp"
         android:layout_alignParentBottom="true"
         android:text="Add to Cart"
