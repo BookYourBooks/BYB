@@ -14,19 +14,19 @@ public class AdminTextbookCategory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_textbook_category);
-        ccycle=findViewById(R.id.c_cycle);
-        pcycle=findViewById(R.id.p_cycle);
-        sem3=findViewById(R.id.sem_3);
-        sem4=findViewById(R.id.sem_4);
-        sem5=findViewById(R.id.sem_5);
-        sem6=findViewById(R.id.sem_6);
-        sem7=findViewById(R.id.sem_7);
-        sem8=findViewById(R.id.sem_8);
+        ccycle=findViewById(R.id.admin_c_cycle);
+        pcycle=findViewById(R.id.admin_p_cycle);
+        sem3=findViewById(R.id.admin_sem_3);
+        sem4=findViewById(R.id.admin_sem_4);
+        sem5=findViewById(R.id.admin_sem_5);
+        sem6=findViewById(R.id.admin_sem_6);
+        sem7=findViewById(R.id.admin_sem_7);
+        sem8=findViewById(R.id.admin_sem_8);
 
         ccycle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewProductActivity.class);
+                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewTextbookActivity.class);
                 intent.putExtra("category", "CCycle");
                 startActivity(intent);
             }
@@ -35,7 +35,7 @@ public class AdminTextbookCategory extends AppCompatActivity {
         pcycle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewProductActivity.class);
+                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewTextbookActivity.class);
                 intent.putExtra("category", "PCycle");
                 startActivity(intent);
             }
@@ -44,7 +44,7 @@ public class AdminTextbookCategory extends AppCompatActivity {
         sem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewProductActivity.class);
+                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewTextbookActivity.class);
                 intent.putExtra("category", "3Sem");
                 startActivity(intent);
             }
@@ -53,7 +53,7 @@ public class AdminTextbookCategory extends AppCompatActivity {
         sem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewProductActivity.class);
+                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewTextbookActivity.class);
                 intent.putExtra("category", "4Sem");
                 startActivity(intent);
             }
@@ -62,7 +62,7 @@ public class AdminTextbookCategory extends AppCompatActivity {
         sem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewProductActivity.class);
+                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewTextbookActivity.class);
                 intent.putExtra("category", "5Sem");
                 startActivity(intent);
             }
@@ -71,7 +71,7 @@ public class AdminTextbookCategory extends AppCompatActivity {
         sem6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewProductActivity.class);
+                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewTextbookActivity.class);
                 intent.putExtra("category", "6Sem");
                 startActivity(intent);
             }
@@ -80,7 +80,7 @@ public class AdminTextbookCategory extends AppCompatActivity {
         sem7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewProductActivity.class);
+                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewTextbookActivity.class);
                 intent.putExtra("category", "7Sem");
                 startActivity(intent);
             }
@@ -89,7 +89,7 @@ public class AdminTextbookCategory extends AppCompatActivity {
         sem8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewProductActivity.class);
+                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddNewTextbookActivity.class);
                 intent.putExtra("category", "8Sem");
                 startActivity(intent);
             }
