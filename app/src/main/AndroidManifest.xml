@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB"
         tools:replace="android:theme">
-        <activity android:name=".user_product_detail_activity"></activity>
+        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".user_product_detail_activity" />
         <activity android:name=".AdminTextbookCategory" />
         <activity android:name=".AdminAddNewTextbookActivity"/>
         <activity
