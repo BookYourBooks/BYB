@@ -4,10 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.icu.util.Calendar;
+import java.util.Calendar;
 import android.os.Bundle;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.example.byb.Prevalent.Prevalent;
 import com.example.byb.model.Stationary_product;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -16,7 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.rey.material.widget.Button;
+import android.widget.Button;
 import com.rey.material.widget.FloatingActionButton;
 
 import android.view.View;
@@ -42,7 +43,7 @@ public class user_product_detail_activity extends AppCompatActivity {
     private TextView productPrice, productDescription, productName;
     private String productID = "";
     private String category="";
-    private Button addToCardButtonl
+    private Button addToCardButton;
 
 
 
@@ -77,16 +78,16 @@ public class user_product_detail_activity extends AppCompatActivity {
 
         String saveCurrentDate,saveCurrentTime;
 
-        Calendar CalForDate = Calendar.getInstance();
+        Calendar CallForDate = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
-        saveCurrentDate = currentDate.format(calForDate.getTime());
+        saveCurrentDate = currentDate.format(CallForDate.getTime());
 
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime = currentDate.format(calForDate.getTime());
+        saveCurrentTime = currentDate.format(CallForDate.getTime());
 
-       final DatabaseReference cartlistRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
+       final DatabaseReference cartlistRef = FirebaseDatabase.getInstance().getReference().child("Cart_List");
 
-        final HashMap<String, object> cartMap= new HashMap<>();
+        final HashMap<String,Object> cartMap= new HashMap<>();
         cartMap.put("pid", productID);
         cartMap.put("pname", productName.getText().toString());
         cartMap.put("price", productPrice.getText().toString());
@@ -95,12 +96,12 @@ public class user_product_detail_activity extends AppCompatActivity {
         cartMap.put("discount", "");
         cartMap.put("Date", saveCurrentDate);
 
-        cartlistRef.child("User view").child(Prevalent.currentOnlineUSer.getPhone()).child("Prodcuts").child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        cartlistRef.child("User view").child(Prevalent.currentonlineusers.getUsn()).child(category).child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<Void> task) {
                 if (task.isSuccessful())
                 {
-                    cartlistRef.child("Admin view").child(Prevalent.currentOnlineUSer.getPhone()).child("Prodcuts").child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    cartlistRef.child("Admin view").child(Prevalent.currentonlineusers.getUsn()).child(category).child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull @NotNull Task<Void> task) {
 
@@ -117,7 +118,7 @@ public class user_product_detail_activity extends AppCompatActivity {
                     });
                 }
             }
-        })
+        });
 
 
 
