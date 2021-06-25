@@ -48,6 +48,7 @@
         android:padding="14dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/admin_c_cycle"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -92,6 +93,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/admin_p_cycle"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -135,6 +137,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
+            android:id="@+id/admin_sem_3"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -176,6 +179,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
+            android:id="@+id/admin_sem_4"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -219,6 +223,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
+            android:id="@+id/admin_sem_5"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -261,6 +266,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
+            android:id="@+id/admin_sem_6"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -302,6 +308,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
+            android:id="@+id/admin_sem_7"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -344,6 +351,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
+            android:id="@+id/admin_sem_8"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
