@@ -25,8 +25,8 @@ public class user_stationary_category extends AppCompatActivity {
         notebooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(user_stationary_category.this, user_notebooks.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(user_stationary_category.this, user_notebooks.class);
+                startActivity(intent1);
             }
         });
 
