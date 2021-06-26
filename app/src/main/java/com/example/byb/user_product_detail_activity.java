@@ -96,12 +96,12 @@ public class user_product_detail_activity extends AppCompatActivity {
         cartMap.put("discount", "");
         cartMap.put("Date", saveCurrentDate);
 
-        cartlistRef.child("User view").child(Prevalent.currentonlineusers.getUsn()).child(category).child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        cartlistRef.child("User view").child(Prevalent.currentonlineusers.getUsn()).child("Products").child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<Void> task) {
                 if (task.isSuccessful())
                 {
-                    cartlistRef.child("Admin view").child(Prevalent.currentonlineusers.getUsn()).child(category).child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    cartlistRef.child("Admin view").child(Prevalent.currentonlineusers.getUsn()).child("Products").child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull @NotNull Task<Void> task) {
 
@@ -134,7 +134,6 @@ public class user_product_detail_activity extends AppCompatActivity {
                 if (snapshot.exists())
                 {
                     Stationary_product products = snapshot.getValue(Stationary_product.class);
-
                     productName.setText(products.getPname());
                     productPrice.setText(products.getPrice());
                     productDescription.setText(products.getDescription());

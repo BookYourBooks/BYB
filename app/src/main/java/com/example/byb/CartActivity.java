@@ -48,37 +48,37 @@ public class CartActivity extends AppCompatActivity
 
 
     @Override
-    protected void onstart()
+    protected void onStart()
     {
         super.onStart();
 
-        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
+        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart_List");
         FirebaseRecyclerOptions<Cart> options =
                 new FirebaseRecyclerOptions.Builder<Cart>()
-                .setQuery(cartListRef.child("User View")
+                .setQuery(cartListRef.child("User view")
                         .child(Prevalent.currentonlineusers.getUsn()).child("Products"),Cart.class).build();
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter
         = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull @NotNull CartViewHolder cartViewHolder, int i, @NonNull @NotNull Cart cart)
+            protected void onBindViewHolder(@NonNull CartViewHolder holder, int i, @NonNull Cart model)
             {
-                Cart model = null;
-                cartViewHolder.txtProductQuantity.setText(model.getQuantity());
-                cartViewHolder.txtProductPrice.setText(model.getPrice());
-                cartViewHolder.txtProductName.setText(model.getPname());
+                holder.txtProductQuantity.setText(" Quantity = " +model.getQuantity());
+                holder.txtProductPrice.setText(" Price = " +model.getPrice()+"Rs");
+                holder.txtProductName.setText(model.getPname());
             }
 
-            @NonNull
             @NotNull
             @Override
-            public CartViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType)
+            public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
             {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_items_layout, parent ,false);
                 CartViewHolder holder= new CartViewHolder(view);
                 return holder;
             }
         };
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
 
     }
 }
