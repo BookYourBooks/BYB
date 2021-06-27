@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 public class AdminStationaryActivity extends AppCompatActivity {
     private CardView notebooks,accessories,sheets,files,bluebooks,record;
+    private Button login;
 
 
     @Override
@@ -26,6 +27,7 @@ public class AdminStationaryActivity extends AppCompatActivity {
         files=findViewById(R.id.admin_stationery_files);
         bluebooks=findViewById(R.id.admin_stationery_bluebooks);
         record=findViewById(R.id.admin_stationery_record);
+        login=findViewById(R.id.admin_login_add_new_product);
 
         notebooks.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +79,15 @@ public class AdminStationaryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AdminStationaryActivity.this, AdminAddNewProductActivity.class);
                 intent.putExtra("category", "BMSIT Record");
+                startActivity(intent);
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminStationaryActivity.this, MainActivity.class);
+                intent.putExtra("category", "Login");
                 startActivity(intent);
             }
         });
