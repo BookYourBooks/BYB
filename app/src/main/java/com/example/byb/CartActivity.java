@@ -36,6 +36,8 @@ public class CartActivity extends AppCompatActivity
     private Button NextProcessBtn;
     private TextView txtTotalPrice;
 
+    private int overAllTotalPrice=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -50,6 +52,19 @@ public class CartActivity extends AppCompatActivity
 
         NextProcessBtn = (Button) findViewById(R.id.next_process_btn);
         txtTotalPrice = (TextView) findViewById(R.id.total_price);
+
+        NextProcessBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                txtTotalPrice.setText("Total Price =Rs." +String.valueOf(overAllTotalPrice));
+
+                Intent intent = new Intent(CartActivity.this, user_confirm_final_order.class);
+                intent.putExtra("Total Price", String.valueOf(overAllTotalPrice));
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 
@@ -61,8 +76,12 @@ public class CartActivity extends AppCompatActivity
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart_List");
         FirebaseRecyclerOptions<Cart> options =
                 new FirebaseRecyclerOptions.Builder<Cart>()
-                .setQuery(cartListRef.child("User view")
-                        .child(Prevalent.currentonlineusers.getUsn()).child("Products"),Cart.class).build();
+                .setQuery(cartListRef
+                                .child("User view")
+                        .child(Prevalent.currentonlineusers.getUsn())
+                        .child("Products")
+                        ,Cart.class)
+                        .build();
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter
         = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
@@ -72,6 +91,11 @@ public class CartActivity extends AppCompatActivity
                 holder.txtProductQuantity.setText(" Quantity = " +model.getQuantity());
                 holder.txtProductPrice.setText(" Price = " +model.getPrice()+"Rs");
                 holder.txtProductName.setText(model.getPname());
+
+                int oneTypeProdcutPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
+                overAllTotalPrice = overAllTotalPrice + oneTypeProdcutPrice;
+
+
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -91,6 +115,7 @@ public class CartActivity extends AppCompatActivity
                                 {
                                     Intent intent = new Intent(CartActivity.this,user_product_detail_activity.class);
                                     intent.putExtra("pid",model.getPid());
+                                    intent.putExtra("category",model.getCategory());
                                     startActivity(intent);
                                 }
                                 if (i==1)

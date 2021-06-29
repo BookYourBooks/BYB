@@ -92,6 +92,7 @@ public class user_product_detail_activity extends AppCompatActivity {
         cartMap.put("pname", productName.getText().toString());
         cartMap.put("price", productPrice.getText().toString());
         cartMap.put("time", saveCurrentTime);
+        cartMap.put("category", category);
         cartMap.put("quantity", numberButton.getNumber());
         cartMap.put("discount", "");
         cartMap.put("Date", saveCurrentDate);
@@ -134,6 +135,7 @@ public class user_product_detail_activity extends AppCompatActivity {
                 if (snapshot.exists())
                 {
                     Stationary_product products = snapshot.getValue(Stationary_product.class);
+                    assert products != null;
                     productName.setText(products.getPname());
                     productPrice.setText(products.getPrice());
                     productDescription.setText(products.getDescription());
