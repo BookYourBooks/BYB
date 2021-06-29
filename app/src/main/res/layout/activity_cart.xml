@@ -29,6 +29,20 @@
             android:layout_gravity="center_horizontal" />
 
     </RelativeLayout>
+    <TextView
+        android:id="@+id/confirm_order_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/purple_500"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:text="Congratulations your order has been placed"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:visibility="gone"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cart_list"
         android:layout_below="@+id/rl11"
