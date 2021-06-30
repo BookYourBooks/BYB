@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminAddActivity extends AppCompatActivity {
     public Button button;
+    private Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +17,7 @@ public class AdminAddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_add);
 
         button = (Button) findViewById(R.id.addbtn);
+        login = (Button) findViewById(R.id.loginbtnaddact);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,5 +26,14 @@ public class AdminAddActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminAddActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
