@@ -86,7 +86,7 @@ public class AdminStationaryActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminStationaryActivity.this, MainActivity.class);
+                Intent intent = new Intent(AdminStationaryActivity.this, AdminAddActivity.class);
                 intent.putExtra("category", "Login");
                 startActivity(intent);
             }

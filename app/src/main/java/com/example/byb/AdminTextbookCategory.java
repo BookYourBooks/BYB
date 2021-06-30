@@ -101,8 +101,7 @@ public class AdminTextbookCategory extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminTextbookCategory.this, MainActivity.class);
-                intent.putExtra("category", "Login");
+                Intent intent = new Intent(AdminTextbookCategory.this, AdminAddActivity.class);
                 startActivity(intent);
             }
         });
