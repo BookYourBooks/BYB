@@ -2,17 +2,26 @@ package com.example.byb.model;
 
 public class Cart
 {
-    private String pid,pname,price,quantity,discount;
+    private String pid,pname,price,quantity,discount,category;
 
     public Cart() {
     }
 
-    public Cart(String pid, String pname, String price, String quantity, String discount) {
+    public Cart(String pid, String pname, String price, String quantity, String discount,String category) {
         this.pid = pid;
         this.pname = pname;
         this.price = price;
         this.quantity = quantity;
         this.discount = discount;
+        this.category=category;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getPid() {

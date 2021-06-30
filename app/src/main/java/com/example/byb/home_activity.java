@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
@@ -27,7 +28,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class home_activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
-    NavigationView navigationView;
     private Button btnToggleDark;
     private LinearLayout home_stationery,home_textbooks,home_lab_manual,home_forms;
 
@@ -59,6 +59,7 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
             }
         });
 
+
         home_textbooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +82,6 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
                 switch (menuItem.getItemId())
                 {
                     case  R.id.nav_cart:Intent intent1 = new Intent(home_activity.this , CartActivity.class);
-
                         startActivity(intent1);
                         break;
 

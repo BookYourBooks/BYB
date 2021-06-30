@@ -42,7 +42,7 @@ public class user_product_detail_activity extends AppCompatActivity {
     private ElegantNumberButton numberButton;
     private TextView productPrice, productDescription, productName;
     private String productID = "";
-    private String category="";
+    private String category="",state="Normal";
     private Button addToCardButton;
 
 
@@ -67,11 +67,22 @@ public class user_product_detail_activity extends AppCompatActivity {
         addToCardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addingToCartList();
+                if (state.equals("Order Placed")||state.equals("Order Shipped")){
+                    Toast.makeText(user_product_detail_activity.this,"You can purchase more orders ,once your order is shipped or confirmed",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    addingToCartList();
+                }
             }
         });
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CheckOrderState();
     }
 
     private void addingToCartList() {
@@ -92,6 +103,7 @@ public class user_product_detail_activity extends AppCompatActivity {
         cartMap.put("pname", productName.getText().toString());
         cartMap.put("price", productPrice.getText().toString());
         cartMap.put("time", saveCurrentTime);
+        cartMap.put("category", category);
         cartMap.put("quantity", numberButton.getNumber());
         cartMap.put("discount", "");
         cartMap.put("Date", saveCurrentDate);
@@ -134,6 +146,7 @@ public class user_product_detail_activity extends AppCompatActivity {
                 if (snapshot.exists())
                 {
                     Stationary_product products = snapshot.getValue(Stationary_product.class);
+                    assert products != null;
                     productName.setText(products.getPname());
                     productPrice.setText(products.getPrice());
                     productDescription.setText(products.getDescription());
@@ -151,5 +164,30 @@ public class user_product_detail_activity extends AppCompatActivity {
         });
 
 
+    }
+    private void CheckOrderState()
+    {
+        DatabaseReference orderref;
+        orderref=FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentonlineusers.getUsn());
+        orderref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    String ShippingState=snapshot.child("State").getValue().toString();
+
+                    if(ShippingState.equals("Shipped")){
+                        state="Order Shipped";
+                    }
+                    else if (ShippingState.equals("Not Shipped")){
+                        state="Order Placed";
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
     }
 }
