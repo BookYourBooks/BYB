@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB"
         tools:replace="android:theme">
-        <activity android:name=".admin_new_orders"></activity>
+        <activity android:name=".AdminNewOrdersActivity"></activity>
         <activity android:name=".user_confirm_final_order" />
         <activity
             android:name=".CartActivity"

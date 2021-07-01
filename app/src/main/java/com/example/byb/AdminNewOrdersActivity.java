@@ -26,7 +26,8 @@ public class AdminNewOrdersActivity  extends AppCompatActivity
     private DatabaseReference ordersRef;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_new_orders);
 
@@ -49,7 +50,7 @@ public class AdminNewOrdersActivity  extends AppCompatActivity
         FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder> adapter =
                 new FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull @NotNull AdminOrdersViewHolder adminOrdersViewHolder, int i, @NonNull @NotNull AdminOrders adminOrders)
+                    protected void onBindViewHolder(@NonNull AdminOrdersViewHolder adminOrdersViewHolder, int i, @NonNull AdminOrders adminOrders)
                     {
                         adminOrdersViewHolder.userName.setText("Name: " + adminOrders.getName());
                         adminOrdersViewHolder.userPhoneNumber.setText("Phone: " + adminOrders.getPhone());
@@ -61,9 +62,8 @@ public class AdminNewOrdersActivity  extends AppCompatActivity
                     }
 
                     @NonNull
-                    @NotNull
                     @Override
-                    public AdminOrdersViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType)
+                    public AdminOrdersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
                     {
                         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.orders_layout,parent,false);
                         return new AdminOrdersViewHolder(view);
@@ -78,7 +78,7 @@ public class AdminNewOrdersActivity  extends AppCompatActivity
     {
         public TextView userName, userPhoneNumber, userTotalPrice, userDateTime, userShippingAddress;
         public Button ShowOrdersBtn;
-        public AdminOrdersViewHolder(@NonNull @NotNull View itemView)
+        public AdminOrdersViewHolder(View itemView)
         {
             super(itemView);
 
