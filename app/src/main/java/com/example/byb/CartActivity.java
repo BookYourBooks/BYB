@@ -168,8 +168,8 @@ public class CartActivity extends AppCompatActivity
                 @Override
                 public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                     if (snapshot.exists()){
-                        String ShippingState=snapshot.child("State").getValue().toString();
-                        String username=snapshot.child("Name").getValue().toString();
+                        String ShippingState=snapshot.child("state").getValue().toString();
+                        String username=snapshot.child("name").getValue().toString();
 
                         if(ShippingState.equals("Shipped")){
                             txtTotalPrice.setText("Dear"+username+"\n order is shipped successfully");

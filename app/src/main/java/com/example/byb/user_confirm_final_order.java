@@ -96,6 +96,7 @@ public class user_confirm_final_order extends AppCompatActivity {
         ordersMap.put("phone", phoneEditText.getText().toString());
         ordersMap.put("address", addressEditText.getText().toString());
         ordersMap.put("city", cityEditText.getText().toString());
+        ordersMap.put("usn", Prevalent.currentonlineusers.getUsn());
         ordersMap.put("time", saveCurrentTime);
         ordersMap.put("date", saveCurrentDate);
         ordersMap.put("state", "Not Shipped");

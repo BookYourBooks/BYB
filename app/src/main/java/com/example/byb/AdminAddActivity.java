@@ -8,18 +8,19 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminAddActivity extends AppCompatActivity {
-    public Button button;
-    private Button login;
+    public Button add_item;
+    private Button login,admin_check_new_order;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add);
 
-        button = (Button) findViewById(R.id.addbtn);
+        add_item = (Button) findViewById(R.id.addbtn);
         login = (Button) findViewById(R.id.loginbtnaddact);
+        admin_check_new_order= (Button) findViewById(R.id.admin_check_new_order);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        add_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminAddActivity.this, AdminCategoryActivity.class);
@@ -31,6 +32,14 @@ public class AdminAddActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminAddActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        admin_check_new_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminAddActivity.this, AdminNewOrdersActivity.class);
                 startActivity(intent);
             }
         });

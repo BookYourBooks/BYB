@@ -2,12 +2,13 @@ package com.example.byb.model;
 
 public class AdminOrders
 {
-    private String name, phone, address, city, state, date, time, totalAmount;
+    private String name, phone, address, city, state, date, time, totalAmount,usn;
 
     public AdminOrders()
     {
 
     }
+
 
     public AdminOrders(String name, String phone, String address, String city, String state, String date, String time, String totalAmount)
     {
@@ -19,6 +20,7 @@ public class AdminOrders
         this.date = date;
         this.time = time;
         this.totalAmount = totalAmount;
+        this.usn = usn;
     }
 
     public String getName() {
@@ -83,5 +85,13 @@ public class AdminOrders
 
     public void setTotalAmount(String totalAmount) {
         this.totalAmount = totalAmount;
+    }
+
+    public String getUsn() {
+        return usn;
+    }
+
+    public void setUsn(String usn) {
+        this.usn = usn;
     }
 }

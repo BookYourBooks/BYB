@@ -173,7 +173,7 @@ public class user_product_detail_activity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    String ShippingState=snapshot.child("State").getValue().toString();
+                    String ShippingState=snapshot.child("state").getValue().toString();
 
                     if(ShippingState.equals("Shipped")){
                         state="Order Shipped";

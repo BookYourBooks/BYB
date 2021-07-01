@@ -88,8 +88,7 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
 
 
                     case R.id.nav_orders:
-                        Intent intent4 = new Intent(home_activity.this , AdminNewOrdersActivity.class);
-                        startActivity(intent4);
+
 
                         break;
                     case R.id.nav_categories:
