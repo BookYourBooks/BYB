@@ -89,6 +89,7 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
 
                     case R.id.nav_orders:
 
+
                         break;
                     case R.id.nav_categories:
 

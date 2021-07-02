@@ -14,9 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB"
         tools:replace="android:theme">
-        <activity android:name=".user_confirm_final_order"></activity>
-        <activity android:name=".CartActivity"
-            android:theme="@style/Theme.BYB.NoActionBar"/>
+        <activity android:name=".AdminUserProductsActivity"></activity>
+        <activity android:name=".AdminNewOrdersActivity" />
+        <activity android:name=".user_confirm_final_order" />
+        <activity
+            android:name=".CartActivity"
+            android:theme="@style/Theme.BYB.NoActionBar" />
         <activity android:name=".user_product_detail_activity" />
         <activity android:name=".AdminTextbookCategory" />
         <activity

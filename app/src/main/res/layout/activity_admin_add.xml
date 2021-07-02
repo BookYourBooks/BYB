@@ -4,32 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminAddActivity" >
+    tools:context=".AdminAddActivity">
 
     <Button
         android:id="@+id/addbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Items"
         android:width="352dp"
+        android:text="Add Items"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:layout_width="wrap_content"
         android:id="@+id/loginbtnaddact"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:width="352dp"
         android:text="Go to Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585"
-        android:width="352dp"
-        />
+        app:layout_constraintVertical_bias="0.613" />
+
+    <Button
+        android:id="@+id/admin_check_new_order"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:text="CHECK NEW ORDERS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginbtnaddact"
+        app:layout_constraintVertical_bias="0.174" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
