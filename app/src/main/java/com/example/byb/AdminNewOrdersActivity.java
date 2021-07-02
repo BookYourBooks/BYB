@@ -1,5 +1,6 @@
 package com.example.byb;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,6 +59,17 @@ public class AdminNewOrdersActivity  extends AppCompatActivity
                         adminOrdersViewHolder.userTotalPrice.setText("Total Amount: " + adminOrders.getTotalAmount());
                         adminOrdersViewHolder.userDateTime.setText("Order at: " + adminOrders.getDate() + "  "+ adminOrders.getTime());
                         adminOrdersViewHolder.userShippingAddress.setText("Shipping Address: " + adminOrders.getAddress() + ", " + adminOrders.getCity());
+
+                        adminOrdersViewHolder.ShowOrdersBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v)
+                            {
+                                String uID =getRef(position).getKey();
+                                Intent intent = new Intent(AdminNewOrdersActivity.this, AdminUserProductsActivity.class);
+                                intent.putExtra( name : "uid", pID);
+                                startActivity(intent);
+                            }
+                        });
 
 
                     }
