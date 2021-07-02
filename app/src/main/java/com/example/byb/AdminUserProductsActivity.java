@@ -26,21 +26,24 @@ public class AdminUserProductsActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     private DatabaseReference cartListref;
 
-    private String userID = "";
+    private String USN = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_user_products);
 
-        userID = getIntent().getStringExtra("uid");
+        USN = getIntent().getStringExtra("USN");
 
         productsList = findViewById(R.id.products_list);
         productsList.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         productsList.setLayoutManager(layoutManager);
 
-        cartListref = FirebaseDatabase.getInstance().getReference().child("Cart_List").child("Admin view").child(userID).child("Prodcuts");
+        cartListref = FirebaseDatabase.getInstance().getReference().child("Cart_List")
+                .child("Admin view")
+                .child(USN)
+                .child("Products");
 
 
     }

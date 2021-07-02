@@ -1,6 +1,7 @@
 package com.example.byb;
 
 import android.content.Intent;
+import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.byb.Prevalent.Prevalent;
 import com.example.byb.model.AdminOrders;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -64,9 +66,8 @@ public class AdminNewOrdersActivity  extends AppCompatActivity
                             @Override
                             public void onClick(View v)
                             {
-                                String uID =getRef(position).getKey();
                                 Intent intent = new Intent(AdminNewOrdersActivity.this, AdminUserProductsActivity.class);
-                                intent.putExtra( name : "uid", pID);
+                                intent.putExtra("USN", adminOrders.getUsn());
                                 startActivity(intent);
                             }
                         });
