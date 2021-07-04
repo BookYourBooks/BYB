@@ -98,8 +98,8 @@ public class CartActivity extends AppCompatActivity
                 holder.txtProductPrice.setText(" Price = " +model.getPrice()+"Rs");
                 holder.txtProductName.setText(model.getPname());
 
-                int oneTypeProdcutPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
-                overAllTotalPrice = overAllTotalPrice + oneTypeProdcutPrice;
+                int oneTypeProductPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
+                overAllTotalPrice = overAllTotalPrice + oneTypeProductPrice;
 
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {

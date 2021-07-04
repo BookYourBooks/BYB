@@ -26,17 +26,30 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
-public class user_notebooks extends AppCompatActivity {
+public class user_notebooks extends AppCompatActivity
+{
     private DatabaseReference ProductRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private String Category="NoteBooks";
 
+    private String type = "";
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_notebooks);
+
+        Intent intent =getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null)
+        {
+            type = getIntent().getExtras().get("Admin").toString();
+        }
+
+
         recyclerView=findViewById(R.id.recycler_item);
         recyclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(this);
@@ -64,18 +77,34 @@ public class user_notebooks extends AppCompatActivity {
 
 
 
-                                holder.productname.setText(stationary_product.getPname());
-                                holder.productdescription.setText(stationary_product.getDescription());
-                                holder.productprice.setText("Price = " + stationary_product.getPrice() + "Rs");
-                                Picasso.get().load(stationary_product.getImage()).into(holder.productimage);
+                                if (!type.equals("Admin"))
+                                {
+                                    holder.productname.setText(stationary_product.getPname());
+                                    holder.productdescription.setText(stationary_product.getDescription());
+                                    holder.productprice.setText("Price = " + stationary_product.getPrice() + "Rs");
+                                    Picasso.get().load(stationary_product.getImage()).into(holder.productimage);
+
+                                }
 
                                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                                     @Override
-                                    public void onClick(View v) {
-                                        Intent intent = new Intent(user_notebooks.this,user_product_detail_activity.class);
-                                        intent.putExtra("pid",stationary_product.getPid());
-                                        intent.putExtra("category","NoteBooks");
-                                        startActivity(intent);
+                                    public void onClick(View v)
+                                    {
+                                        if(type.equals("Admin"))
+                                        {
+                                            Intent intent = new Intent(user_notebooks.this,AdminMaintainProductsActivity.class);
+                                            intent.putExtra("pid",stationary_product.getPid());
+                                            intent.putExtra("category","NoteBooks");
+                                            startActivity(intent);
+                                        }
+                                        else{
+                                            Intent intent = new Intent(user_notebooks.this,user_product_detail_activity.class);
+                                            intent.putExtra("pid",stationary_product.getPid());
+                                            intent.putExtra("category","NoteBooks");
+                                            startActivity(intent);
+                                        }
+
+
 
 
 

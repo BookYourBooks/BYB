@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB"
         tools:replace="android:theme">
-        <activity android:name=".AdminUserProductsActivity"></activity>
+        <activity android:name=".AdminMaintainProductsActivity"></activity>
+        <activity android:name=".AdminUserProductsActivity" />
         <activity android:name=".AdminNewOrdersActivity" />
         <activity android:name=".user_confirm_final_order" />
         <activity
