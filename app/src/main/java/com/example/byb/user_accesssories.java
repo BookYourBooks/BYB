@@ -31,6 +31,7 @@ public class user_accesssories extends AppCompatActivity {
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private String Category="Accessories";
+    private String type = "";
 
 
     @Override
@@ -41,6 +42,13 @@ public class user_accesssories extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+        Intent intent =getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null)
+        {
+            type = getIntent().getExtras().get("admins").toString();
+        }
 
         ProductRef= FirebaseDatabase.getInstance().getReference().child(Category);
     }
@@ -71,10 +79,20 @@ public class user_accesssories extends AppCompatActivity {
                                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
+                                        if(!type.equals("admins"))
+                                        {
                                         Intent intent = new Intent(user_accesssories.this,user_product_detail_activity.class);
                                         intent.putExtra("pid",stationary_product.getPid());
                                         intent.putExtra("category","Accessories");
                                         startActivity(intent);
+                                        }
+                                        else{
+                                            Intent intent = new Intent(user_accesssories.this,AdminMaintainProductsActivity.class);
+                                            intent.putExtra("pid",stationary_product.getPid());
+                                            Toast.makeText(user_accesssories.this,"Write down product name",Toast.LENGTH_SHORT).show();
+                                            intent.putExtra("category","Accessories");
+                                            startActivity(intent);
+                                        }
 
 
 

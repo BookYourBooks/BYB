@@ -1,6 +1,5 @@
 package com.example.byb;
 
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,11 +25,11 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
-public class user_record extends AppCompatActivity {
+public class user_sem_7_textbook extends AppCompatActivity {
     private DatabaseReference ProductRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-    private String Category="BMSIT Record";
+    private String Category="7Sem";
     private String type = "";
 
 
@@ -81,16 +80,16 @@ public class user_record extends AppCompatActivity {
                                     public void onClick(View v) {
                                         if(!type.equals("admins"))
                                         {
-                                            Intent intent = new Intent(user_record.this,user_product_detail_activity.class);
+                                            Intent intent = new Intent(user_sem_7_textbook.this,user_product_detail_activity.class);
                                             intent.putExtra("pid",stationary_product.getPid());
-                                            intent.putExtra("category","BMSIT Record");
+                                            intent.putExtra("category","7Sem");
                                             startActivity(intent);
                                         }
                                         else{
-                                            Intent intent = new Intent(user_record.this,AdminMaintainProductsActivity.class);
+                                            Intent intent = new Intent(user_sem_7_textbook.this,AdminMaintainProductsActivity.class);
                                             intent.putExtra("pid",stationary_product.getPid());
-                                            Toast.makeText(user_record.this,"Write down product name",Toast.LENGTH_SHORT).show();
-                                            intent.putExtra("category","BMSIT Record");
+                                            Toast.makeText(user_sem_7_textbook.this,"Write down product name",Toast.LENGTH_SHORT).show();
+                                            intent.putExtra("category","7Sem");
                                             startActivity(intent);
                                         }
 
@@ -103,7 +102,7 @@ public class user_record extends AppCompatActivity {
 
                             @NotNull
                             @Override
-                            public ProductViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
+                            public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                                 View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.user_product_item_layout,parent,false);
                                 ProductViewHolder holder=new ProductViewHolder(view);
                                 return holder;

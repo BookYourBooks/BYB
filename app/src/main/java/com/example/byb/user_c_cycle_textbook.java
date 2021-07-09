@@ -1,6 +1,5 @@
 package com.example.byb;
 
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,11 +25,12 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
-public class user_notebooks extends AppCompatActivity {
+public class user_c_cycle_textbook extends AppCompatActivity {
     private DatabaseReference ProductRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-    private String Category="NoteBooks";
+    private String Category="CCycle";
+    private String type = "";
 
 
     @Override
@@ -41,6 +41,13 @@ public class user_notebooks extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+        Intent intent =getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null)
+        {
+            type = getIntent().getExtras().get("admins").toString();
+        }
 
         ProductRef= FirebaseDatabase.getInstance().getReference().child(Category);
     }
@@ -68,24 +75,34 @@ public class user_notebooks extends AppCompatActivity {
                                 holder.productdescription.setText(stationary_product.getDescription());
                                 holder.productprice.setText("Price = " + stationary_product.getPrice() + "Rs");
                                 Picasso.get().load(stationary_product.getImage()).into(holder.productimage);
-
                                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        Intent intent = new Intent(user_notebooks.this,user_product_detail_activity.class);
-                                        intent.putExtra("pid",stationary_product.getPid());
-                                        intent.putExtra("category","NoteBooks");
-                                        startActivity(intent);
+                                        if(!type.equals("admins"))
+                                        {
+                                            Intent intent = new Intent(user_c_cycle_textbook.this,user_product_detail_activity.class);
+                                            intent.putExtra("pid",stationary_product.getPid());
+                                            intent.putExtra("category","CCycle");
+                                            startActivity(intent);
+                                        }
+                                        else{
+                                            Intent intent = new Intent(user_c_cycle_textbook.this,AdminMaintainProductsActivity.class);
+                                            intent.putExtra("pid",stationary_product.getPid());
+                                            Toast.makeText(user_c_cycle_textbook.this,"Write down product name",Toast.LENGTH_SHORT).show();
+                                            intent.putExtra("category","CCycle");
+                                            startActivity(intent);
+                                        }
 
 
 
                                     }
                                 });
+
                             }
 
                             @NotNull
                             @Override
-                            public ProductViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
+                            public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                                 View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.user_product_item_layout,parent,false);
                                 ProductViewHolder holder=new ProductViewHolder(view);
                                 return holder;
