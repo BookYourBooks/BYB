@@ -38,9 +38,8 @@
             android:padding="12dp"
             android:layout_margin="5dp"
             android:textStyle="bold"
-            android:textColor="@color/purple_700"
-            android:background="@color/design_default_color_secondary"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             />
 
         <EditText
@@ -55,9 +54,8 @@
             android:padding="12dp"
             android:layout_margin="5dp"
             android:textStyle="bold"
-            android:textColor="@color/purple_700"
-            android:background="@color/design_default_color_secondary"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             />
 
         <EditText
@@ -72,9 +70,8 @@
             android:padding="12dp"
             android:layout_margin="5dp"
             android:textStyle="bold"
-            android:textColor="@color/purple_700"
-            android:background="@color/design_default_color_secondary"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             />
         <Button
         android:id="@+id/apply_changes_btn"
@@ -82,7 +79,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_description_maintain"
             android:text="Apply Changes"
-        android:hint="Product Description"
         android:textAlignment="center"
         android:gravity="center_horizontal"
         android:textSize="18sp"
@@ -92,6 +88,22 @@
         android:textColor="@android:color/white"
             android:background="@color/design_default_color_secondary"
         />
+        <Button
+            android:id="@+id/admin_delete_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/apply_changes_btn"
+            android:text="Delete Item"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="100dp"
+            android:background="@color/design_default_color_secondary"
+            />
 
 
 

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,7 @@ public class user_record extends AppCompatActivity {
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private String Category="BMSIT Record";
+    private String type = "";
 
 
     @Override
@@ -40,6 +42,13 @@ public class user_record extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+        Intent intent =getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null)
+        {
+            type = getIntent().getExtras().get("admins").toString();
+        }
 
         ProductRef= FirebaseDatabase.getInstance().getReference().child(Category);
     }
@@ -67,6 +76,28 @@ public class user_record extends AppCompatActivity {
                                 holder.productdescription.setText(stationary_product.getDescription());
                                 holder.productprice.setText("Price = " + stationary_product.getPrice() + "Rs");
                                 Picasso.get().load(stationary_product.getImage()).into(holder.productimage);
+                                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        if(!type.equals("admins"))
+                                        {
+                                            Intent intent = new Intent(user_record.this,user_product_detail_activity.class);
+                                            intent.putExtra("pid",stationary_product.getPid());
+                                            intent.putExtra("category","BMSIT Record");
+                                            startActivity(intent);
+                                        }
+                                        else{
+                                            Intent intent = new Intent(user_record.this,AdminMaintainProductsActivity.class);
+                                            intent.putExtra("pid",stationary_product.getPid());
+                                            Toast.makeText(user_record.this,"Write down product name",Toast.LENGTH_SHORT).show();
+                                            intent.putExtra("category","BMSIT Record");
+                                            startActivity(intent);
+                                        }
+
+
+
+                                    }
+                                });
 
                             }
 

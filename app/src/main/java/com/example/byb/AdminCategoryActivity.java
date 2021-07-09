@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 
 public class AdminCategoryActivity extends AppCompatActivity {
     private LinearLayout stationary,textbooks,labmanual,forms;
-    private Button maintainProductsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,17 +24,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
         labmanual=findViewById(R.id.admin_labmanual);
         forms=findViewById(R.id.admin_forms);
 
-        maintainProductsBtn = (Button) findViewById(R.id.maintain_btn);
 
-        maintainProductsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(AdminCategoryActivity.this, user_notebooks.class);
-                intent.putExtra("Admin" , "Admin");
-                startActivity(intent);
-            }
-        });
 
 
         stationary.setOnClickListener(new View.OnClickListener() {

@@ -31,6 +31,7 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
     ActionBarDrawerToggle actionBarDrawerToggle;
     private Button btnToggleDark;
     private LinearLayout home_stationery,home_textbooks,home_lab_manual,home_forms;
+    private String type = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,13 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
         home_lab_manual=findViewById(R.id.home_lab_manual);
         home_forms=findViewById(R.id.home_forms);
 
+        Intent intent =getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null)
+        {
+            type = getIntent().getExtras().get("admins").toString();
+        }
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_menu);
         navigationView.setNavigationItemSelectedListener(this);
@@ -48,28 +56,48 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
         View headerView = navigationView.getHeaderView(0);
         TextView userNameTextView = headerView.findViewById(R.id.userprofilename);
         CircleImageView profileImageView = headerView.findViewById(R.id.profile_image);
-
-        userNameTextView.setText(Prevalent.currentonlineusers.getName());
-        Picasso.get().load(Prevalent.currentonlineusers.getImage()).placeholder(R.drawable.profile).into(profileImageView);
-
-        home_stationery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(home_activity.this, user_stationary_category.class);
-                startActivity(intent);
-            }
-        });
-
-
-        home_textbooks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(home_activity.this, user_sem_category.class);
-                startActivity(intent);
-            }
-        });
+        if (!type.equals("admins")) {
+            userNameTextView.setText(Prevalent.currentonlineusers.getName());
+            Picasso.get().load(Prevalent.currentonlineusers.getImage()).placeholder(R.drawable.profile).into(profileImageView);
+        }
+        if(!type.equals("admins")) {
+            home_stationery.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(home_activity.this, user_stationary_category.class);
+                    startActivity(intent);
+                }
+            });
 
 
+            home_textbooks.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(home_activity.this, user_sem_category.class);
+                    startActivity(intent);
+                }
+            });
+        }
+        else{
+            home_stationery.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(home_activity.this, user_stationary_category.class);
+                    intent.putExtra("admins","admins");
+                    startActivity(intent);
+                }
+            });
+
+
+            home_textbooks.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(home_activity.this, user_sem_category.class);
+                    intent.putExtra("admins","admins");
+                    startActivity(intent);
+                }
+            });
+        }
 
 
 

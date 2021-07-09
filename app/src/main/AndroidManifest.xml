@@ -32,7 +32,7 @@
         <activity android:name=".user_files" />
         <activity android:name=".user_sheets" />
         <activity android:name=".user_accesssories" />
-        <activity android:name=".user_notebooks" />
+        <activity android:name=".user__notebooks" />
         <activity android:name=".user_sem_category" />
         <activity android:name=".user_stationary_category" />
         <activity android:name=".Home" />

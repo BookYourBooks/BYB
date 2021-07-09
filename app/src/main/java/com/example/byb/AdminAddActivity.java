@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminAddActivity extends AppCompatActivity {
     public Button add_item;
-    private Button login,admin_check_new_order;
+    private Button login,admin_check_new_order,maintain_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class AdminAddActivity extends AppCompatActivity {
         add_item = (Button) findViewById(R.id.addbtn);
         login = (Button) findViewById(R.id.loginbtnaddact);
         admin_check_new_order= (Button) findViewById(R.id.admin_check_new_order);
+        maintain_btn=(Button) findViewById(R.id.maintain_btn);
 
         add_item.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,14 @@ public class AdminAddActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminAddActivity.this, AdminNewOrdersActivity.class);
+                startActivity(intent);
+            }
+        });
+        maintain_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminAddActivity.this, home_activity.class);
+                intent.putExtra("admins","admins");
                 startActivity(intent);
             }
         });

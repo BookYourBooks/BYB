@@ -26,34 +26,30 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
-public class user_notebooks extends AppCompatActivity
+public class user__notebooks extends AppCompatActivity
 {
     private DatabaseReference ProductRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private String Category="NoteBooks";
-
     private String type = "";
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_notebooks);
+        recyclerView=findViewById(R.id.recycler_item);
+        recyclerView.setHasFixedSize(true);
+        layoutManager=new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
         Intent intent =getIntent();
         Bundle bundle = intent.getExtras();
         if(bundle != null)
         {
-            type = getIntent().getExtras().get("Admin").toString();
+            type = getIntent().getExtras().get("admins").toString();
         }
-
-
-        recyclerView=findViewById(R.id.recycler_item);
-        recyclerView.setHasFixedSize(true);
-        layoutManager=new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
 
         ProductRef= FirebaseDatabase.getInstance().getReference().child(Category);
     }
@@ -77,39 +73,33 @@ public class user_notebooks extends AppCompatActivity
 
 
 
-                                if (!type.equals("Admin"))
-                                {
-                                    holder.productname.setText(stationary_product.getPname());
-                                    holder.productdescription.setText(stationary_product.getDescription());
-                                    holder.productprice.setText("Price = " + stationary_product.getPrice() + "Rs");
-                                    Picasso.get().load(stationary_product.getImage()).into(holder.productimage);
-
-                                }
-
+                                holder.productname.setText(stationary_product.getPname());
+                                holder.productdescription.setText(stationary_product.getDescription());
+                                holder.productprice.setText("Price = " + stationary_product.getPrice() + "Rs");
+                                Picasso.get().load(stationary_product.getImage()).into(holder.productimage);
                                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                                     @Override
-                                    public void onClick(View v)
-                                    {
-                                        if(type.equals("Admin"))
+                                    public void onClick(View v) {
+                                        if(!type.equals("admins"))
                                         {
-                                            Intent intent = new Intent(user_notebooks.this,AdminMaintainProductsActivity.class);
+                                            Intent intent = new Intent(user__notebooks.this,user_product_detail_activity.class);
                                             intent.putExtra("pid",stationary_product.getPid());
                                             intent.putExtra("category","NoteBooks");
                                             startActivity(intent);
                                         }
                                         else{
-                                            Intent intent = new Intent(user_notebooks.this,user_product_detail_activity.class);
+                                            Intent intent = new Intent(user__notebooks.this,AdminMaintainProductsActivity.class);
                                             intent.putExtra("pid",stationary_product.getPid());
+                                            Toast.makeText(user__notebooks.this,"Write down product name",Toast.LENGTH_SHORT).show();
                                             intent.putExtra("category","NoteBooks");
                                             startActivity(intent);
                                         }
 
 
 
-
-
                                     }
                                 });
+
                             }
 
                             @NotNull
