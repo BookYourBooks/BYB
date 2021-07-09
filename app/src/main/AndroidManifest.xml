@@ -14,7 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB"
         tools:replace="android:theme">
-        <activity android:name=".AdminMaintainProductsActivity"></activity>
+        <activity android:name=".user_sem_8_textbook"></activity>
+        <activity android:name=".user_sem_7_textbook" />
+        <activity android:name=".user_sem_6_textbook" />
+        <activity android:name=".user_sem_5_textbook" />
+        <activity android:name=".user_sem_4_textbook" />
+        <activity android:name=".user_sem_3_texrtbook" />
+        <activity android:name=".user_p_cycle_textbook" />
+        <activity android:name=".user_c_cycle_textbook" />
+        <activity android:name=".AdminMaintainProductsActivity" />
         <activity android:name=".AdminUserProductsActivity" />
         <activity android:name=".AdminNewOrdersActivity" />
         <activity android:name=".user_confirm_final_order" />
@@ -23,6 +31,7 @@
             android:theme="@style/Theme.BYB.NoActionBar" />
         <activity android:name=".user_product_detail_activity" />
         <activity android:name=".AdminTextbookCategory" />
+        <activity android:name=".AdminAddNewTextbookActivity" />
         <activity
             android:name=".home_activity"
             android:label="@string/title_activity_home"
