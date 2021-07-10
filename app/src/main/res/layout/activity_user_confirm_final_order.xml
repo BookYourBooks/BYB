@@ -64,15 +64,15 @@
         android:hint="Your City Name"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Confrim_Final_order_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:text="CONFIRM"
-        android:background="@color/purple_700"
-        android:textColor="@color/white"
+        android:background="@drawable/custom_button"
+        android:textColor="@color/black"
         android:textSize="20dp"
         />
 

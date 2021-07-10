@@ -55,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        forgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ResetPasswordActivity.class);
+                intent.putExtra("check", "login" );
+                startActivity(intent);
+            }
+        });
+
         admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)

@@ -94,8 +94,9 @@
                     android:inputType="textPassword"
                     android:textColorHint="@color/black" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/registeruser"
+                    android:background="@drawable/custom_button"
                     android:layout_width="352dp"
                     android:layout_height="56dp"
                     android:layout_gravity="center"

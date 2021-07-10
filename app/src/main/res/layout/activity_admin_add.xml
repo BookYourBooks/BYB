@@ -6,19 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".AdminAddActivity">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="352dp"
         android:text="Add Items"
+        android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginbtnaddact"
+        android:background="@drawable/custom_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="352dp"
@@ -30,11 +32,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.613" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/admin_check_new_order"
         android:layout_width="352dp"
         android:layout_height="wrap_content"
         android:text="CHECK NEW ORDERS"
+        android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -42,11 +45,12 @@
         app:layout_constraintTop_toBottomOf="@+id/loginbtnaddact"
         app:layout_constraintVertical_bias="0.174" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/maintain_btn"
         android:layout_width="352dp"
         android:layout_height="wrap_content"
         android:text="MAINTAIN PRODUCTS"
+        android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"

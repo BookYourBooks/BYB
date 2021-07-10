@@ -77,8 +77,9 @@
                 android:textSize="14sp" />
 
         </LinearLayout>
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/loginbtn"
+            android:background="@drawable/custom_button"
             android:layout_width="352dp"
             android:layout_height="56dp"
             android:layout_marginTop="30dp"

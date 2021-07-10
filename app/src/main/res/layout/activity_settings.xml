@@ -132,4 +132,17 @@
         android:inputType="textEmailAddress"
         android:textColorHint="@color/black" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/security_question_button"
+        android:layout_width="352dp"
+        android:layout_height="70dp"
+        android:background="@drawable/custom_button"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/settings_sec"
+        android:ems="10"
+        android:textSize="30dp"
+        android:text="Set Security Questions"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/black" />
+
 </RelativeLayout>

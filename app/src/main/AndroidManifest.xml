@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB"
         tools:replace="android:theme">
-        <activity android:name=".user_sem_8_textbook"></activity>
+        <activity android:name=".ResetPasswordActivity"></activity>
+        <activity android:name=".user_sem_8_textbook" />
         <activity android:name=".user_sem_7_textbook" />
         <activity android:name=".user_sem_6_textbook" />
         <activity android:name=".user_sem_5_textbook" />
