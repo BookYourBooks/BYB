@@ -14,6 +14,11 @@
             android:title="Orders"
             android:iconTint="@color/white"/>
         <item
+            android:id="@+id/nav_user_prints"
+            android:icon="@drawable/orders"
+            android:title="user personal Prints"
+            android:iconTint="@color/white"/>
+        <item
             android:id="@+id/nav_categories"
             android:icon="@drawable/category"
             android:title="Categories"
@@ -33,10 +38,11 @@
 
     <group android:checkableBehavior="single"
         android:id="@+id/group2">
-        <item android:id="@+id/nav_Policy"
+        <item android:id="@+id/nav_annnouncements"
             android:icon="@drawable/ic_baseline_policy_24"
-            android:title="Privacy Policy">
+            android:title="Announcements">
         </item>
+
         <item android:id="@+id/nav_share"
             android:icon="@drawable/ic_baseline_share_24"
             android:title="Share">
