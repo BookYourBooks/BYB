@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminAddActivity extends AppCompatActivity {
     public Button add_item;
-    private Button login,admin_check_new_order,maintain_btn;
+    private Button login,admin_check_new_order,maintain_btn,photo,documentlink,announcement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +20,40 @@ public class AdminAddActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.loginbtnaddact);
         admin_check_new_order= (Button) findViewById(R.id.admin_check_new_order);
         maintain_btn=(Button) findViewById(R.id.maintain_btn);
+        photo=(Button)findViewById(R.id.printout_photo);
+        announcement=(Button)findViewById(R.id.addannouncement);
+        documentlink=(Button)findViewById(R.id.printout_doc);
+
+
+
+        announcement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminAddActivity.this, admin_announcements.class);
+                startActivity(intent);
+            }
+        });
 
         add_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminAddActivity.this, AdminCategoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminAddActivity.this, admin_printout_photo.class);
+                startActivity(intent);
+            }
+        });
+
+        documentlink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminAddActivity.this, admin_printout_document.class);
                 startActivity(intent);
             }
         });
@@ -52,6 +81,9 @@ public class AdminAddActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
 
     }
 }

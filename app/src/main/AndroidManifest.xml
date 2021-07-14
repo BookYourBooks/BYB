@@ -14,7 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB"
         tools:replace="android:theme">
-        <activity android:name=".ResetPasswordActivity"></activity>
+
+        <activity android:name=".ResetPasswordActivity" />
+        <activity android:name=".admin_printout_document" />
+        <activity android:name=".admin_announcements" />
+        <activity android:name=".user_announcements" />
+        <activity android:name=".admin_printout_photo" />
+        <activity android:name=".user_print_upload_document_link" />
+        <activity android:name=".user_printout_upload_photo" />
+        <activity android:name=".user_personal_printout" />
         <activity android:name=".user_sem_8_textbook" />
         <activity android:name=".user_sem_7_textbook" />
         <activity android:name=".user_sem_6_textbook" />
