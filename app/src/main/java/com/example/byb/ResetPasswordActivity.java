@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.byb.Prevalent.Prevalent;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -32,7 +30,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
     private String check = "";
     private TextView pageTitle, titlquestions;
-    private EditText phoneNumber, question1, question2 ;
+    private EditText usn, question1, question2 ;
     private Button verifyButton;
 
 
@@ -45,7 +43,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
         pageTitle = findViewById(R.id.page_title);
         titlquestions = findViewById(R.id.title_questions);
-        phoneNumber = findViewById(R.id.find_phone_number);
+        usn = findViewById(R.id.find_phone_number);
         question1 = findViewById(R.id.question_1);
         question2 = findViewById(R.id.question_2);
         verifyButton = findViewById(R.id.verify_btn);
@@ -56,7 +54,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        phoneNumber.setVisibility(View.GONE);
+        usn.setVisibility(View.GONE);
 
         if (check.equals("settings"))
         {
@@ -78,7 +76,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         }
         else if (check.equals("login"))
         {
-           phoneNumber.setVisibility(View.VISIBLE);
+           usn.setVisibility(View.VISIBLE);
 
            verifyButton.setOnClickListener(new View.OnClickListener() {
                @Override
@@ -148,23 +146,23 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
     private void verifyUser()
     {
-        final String phone = phoneNumber.getText().toString();
+        final String Usn = usn.getText().toString();
         final String answer1 = question1.getText().toString().toLowerCase();
         final String answer2 = question2.getText().toString().toLowerCase();
 
-        if (!phone.equals("") && !answer1.equals("") && !answer2.equals(""))
+        if (!Usn.equals("") && !answer1.equals("") && !answer2.equals(""))
         {
             DatabaseReference ref = FirebaseDatabase.getInstance()
                     .getReference()
-                    .child("Users")
-                    .child(phone);
+                    .child("users")
+                    .child(Usn);
 
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists())
                     {
-                        String mPhone = dataSnapshot.child("phone").getValue().toString();
+                        String mPhone = dataSnapshot.child("usn").getValue().toString();
 
                         if (dataSnapshot.hasChild("Security Questions"))
                         {
@@ -229,7 +227,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        Toast.makeText(ResetPasswordActivity.this, "This phone number does not exist", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ResetPasswordActivity.this, "This usn does not exist", Toast.LENGTH_SHORT).show();
                     }
                 }
 
