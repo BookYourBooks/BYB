@@ -58,12 +58,13 @@
         android:layout_marginRight="50dp"
         android:padding="20dp"
         />
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addnewproductbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/newproductprice"
         android:text="Add Product"
+        android:background="@drawable/custom_button"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:padding="17dp"

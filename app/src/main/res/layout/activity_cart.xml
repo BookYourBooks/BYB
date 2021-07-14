@@ -51,12 +51,12 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/next_process_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom_roundbutton"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
         android:text="Next"
         android:textColor="@android:color/white"
         android:textSize="20dp"

@@ -73,22 +73,24 @@
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/apply_changes_btn"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_description_maintain"
             android:text="Apply Changes"
         android:textAlignment="center"
+            android:background="@drawable/custom_roundbutton"
         android:gravity="center_horizontal"
         android:textSize="18sp"
         android:padding="12dp"
         android:layout_margin="5dp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-            android:background="@color/design_default_color_secondary"
+
         />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/admin_delete_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,7 +104,8 @@
             android:textColor="@android:color/white"
             android:layout_marginTop="70dp"
             android:layout_marginBottom="100dp"
-            android:background="@color/design_default_color_secondary"
+            android:background="@drawable/custom_roundbutton"
+
             />
 
 

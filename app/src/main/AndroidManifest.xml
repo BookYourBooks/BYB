@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB"
         tools:replace="android:theme">
-        <activity android:name=".admin_printout_document"></activity>
+
+        <activity android:name=".ResetPasswordActivity" />
+        <activity android:name=".admin_printout_document" />
         <activity android:name=".admin_announcements" />
         <activity android:name=".user_announcements" />
         <activity android:name=".admin_printout_photo" />
