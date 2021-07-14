@@ -120,6 +120,9 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
 
 
                         break;
+                    case R.id.nav_user_prints:Intent intent5 = new Intent(home_activity.this , user_personal_printout.class);
+                        startActivity(intent5);
+                        break;
                     case R.id.nav_categories:
 
                         break;
@@ -132,7 +135,10 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
                         Intent intent3 = new Intent(home_activity.this , MainActivity.class);
                         startActivity(intent3);
                         break;
-
+                    case R.id.nav_annnouncements:
+                        Intent intent7 = new Intent(home_activity.this , user_announcements.class);
+                        startActivity(intent7);
+                        break;
 
 //Paste your privacy policy link
 

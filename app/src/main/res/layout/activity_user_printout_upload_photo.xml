@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user_printout_upload_photo">
+    <ImageView
+        android:id="@+id/add_new_user_print_image"
+        android:layout_marginTop="10dp"
+        android:cropToPadding="false"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/addproduct"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        />
+    <EditText
+        android:id="@+id/new_user_photo_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/add_new_user_print_image"
+        android:layout_marginTop="6dp"
+        android:hint="Product Description"
+        android:textColorHint="@color/black"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:padding="20dp"
+        />
+    <EditText
+        android:id="@+id/new_user_number_of_copies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/new_user_photo_description"
+        android:layout_marginTop="6dp"
+        android:hint="Number of Copies"
+        android:textColorHint="@color/black"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:padding="20dp"
+        />
+    <Button
+        android:id="@+id/add_new_photo_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_user_number_of_copies"
+        android:text="Add Photo"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:padding="17dp"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        />
+
+
+</RelativeLayout>

@@ -7,6 +7,18 @@
     tools:context=".AdminAddActivity">
 
     <Button
+        android:id="@+id/addannouncement"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:text="update announcement"
+        app:layout_constraintBottom_toTopOf="@+id/addbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.933" />
+
+    <Button
         android:id="@+id/addbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,21 +26,33 @@
         android:text="Add Items"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/loginbtnaddact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="352dp"
-        android:text="Go to Login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613" />
+        app:layout_constraintVertical_bias="0.42" />
+    <Button
+        android:id="@+id/printout_photo"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:text="printout photos"
+        app:layout_constraintBottom_toTopOf="@+id/printout_doc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addbtn" />
+
+    <Button
+        android:id="@+id/printout_doc"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:text="printout Docs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622" />
+
 
     <Button
         android:id="@+id/admin_check_new_order"
@@ -39,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbtnaddact"
+        app:layout_constraintTop_toBottomOf="@+id/printout_doc"
         app:layout_constraintVertical_bias="0.174" />
 
     <Button
@@ -52,11 +76,21 @@
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/admin_check_new_order"
-        app:layout_constraintVertical_bias="0.174"
+        app:layout_constraintVertical_bias="0.174" />
+
+    <Button
+        android:id="@+id/loginbtnaddact"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:text="Log out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maintain_btn"
+        app:layout_constraintVertical_bias="0.174" />
 
 
-
-         />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
