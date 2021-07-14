@@ -56,7 +56,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
         phoneNumber.setVisibility(View.GONE);
 
-        if (check.equals("Settings"))
+        if (check.equals("settings"))
         {
             pageTitle.setText("Set Questions");
             titlquestions.setText("Please set Answers the Following Security Questions");
@@ -91,7 +91,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         }
         else
         {
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentonlineusers.getMobileno());
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("users").child(Prevalent.currentonlineusers.getUsn());
 
             HashMap<String,Object> userdataMap=new HashMap<>();
             userdataMap.put("answer1",answer1);
@@ -115,7 +115,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
     private void displayPreviousAnswers()
     {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentonlineusers.getMobileno());
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("users").child(Prevalent.currentonlineusers.getUsn());
 
         ref.child("Security Questions").addValueEventListener(new ValueEventListener() {
             @Override
