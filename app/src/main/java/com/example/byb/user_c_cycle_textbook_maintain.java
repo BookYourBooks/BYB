@@ -26,11 +26,11 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
-public class user_p_cycle_textbook extends AppCompatActivity {
+public class user_c_cycle_textbook_maintain extends AppCompatActivity {
     private DatabaseReference ProductRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-    private String Category="PCycle";
+    private String Category="CCycle";
     private String type = "";
 
 
@@ -42,13 +42,6 @@ public class user_p_cycle_textbook extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-
-        Intent intent =getIntent();
-        Bundle bundle = intent.getExtras();
-        if(bundle != null)
-        {
-            type = getIntent().getExtras().get("admins").toString();
-        }
 
         ProductRef= FirebaseDatabase.getInstance().getReference().child(Category);
     }
@@ -79,21 +72,10 @@ public class user_p_cycle_textbook extends AppCompatActivity {
                                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        if(!type.equals("admins"))
-                                        {
-                                            Intent intent = new Intent(user_p_cycle_textbook.this,user_product_detail_activity.class);
+                                            Intent intent = new Intent(user_c_cycle_textbook_maintain.this, AdminMaintainProductsActivity.class);
                                             intent.putExtra("pid",stationary_product.getPid());
-                                            intent.putExtra("category","PCycle");
+                                            intent.putExtra("category","CCycle");
                                             startActivity(intent);
-                                        }
-                                        else{
-                                            Intent intent = new Intent(user_p_cycle_textbook.this, AdminMaintainProductsActivity.class);
-                                            intent.putExtra("pid",stationary_product.getPid());
-                                            intent.putExtra("category","PCycle");
-                                            startActivity(intent);
-                                        }
-
-
 
                                     }
                                 });

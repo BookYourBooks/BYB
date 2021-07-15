@@ -26,11 +26,11 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
-public class user_p_cycle_textbook extends AppCompatActivity {
+public class user_notebook_maintain extends AppCompatActivity {
     private DatabaseReference ProductRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-    private String Category="PCycle";
+    private String Category="NoteBooks";
     private String type = "";
 
 
@@ -79,23 +79,13 @@ public class user_p_cycle_textbook extends AppCompatActivity {
                                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        if(!type.equals("admins"))
-                                        {
-                                            Intent intent = new Intent(user_p_cycle_textbook.this,user_product_detail_activity.class);
+
+                                            Intent intent = new Intent(user_notebook_maintain.this, AdminMaintainProductsActivity.class);
                                             intent.putExtra("pid",stationary_product.getPid());
-                                            intent.putExtra("category","PCycle");
-                                            startActivity(intent);
-                                        }
-                                        else{
-                                            Intent intent = new Intent(user_p_cycle_textbook.this, AdminMaintainProductsActivity.class);
-                                            intent.putExtra("pid",stationary_product.getPid());
-                                            intent.putExtra("category","PCycle");
+                                            intent.putExtra("category","NoteBooks");
                                             startActivity(intent);
                                         }
 
-
-
-                                    }
                                 });
 
                             }

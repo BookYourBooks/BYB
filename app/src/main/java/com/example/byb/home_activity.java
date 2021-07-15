@@ -24,6 +24,7 @@ import com.squareup.picasso.Picasso;
 
 import com.example.byb.Prevalent.Prevalent;
 import de.hdodenhof.circleimageview.CircleImageView;
+import io.paperdb.Paper;
 
 public class home_activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -133,6 +134,7 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
                         break;
                     case R.id.nav_logout:
                         Intent intent3 = new Intent(home_activity.this , MainActivity.class);
+                        Paper.book().destroy();
                         startActivity(intent3);
                         break;
                     case R.id.nav_annnouncements:

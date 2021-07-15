@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.byb.Admin.AdminMaintainProductsActivity;
 import com.example.byb.ViewHolder.ProductViewHolder;
 import com.example.byb.model.Stationary_product;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -44,13 +45,6 @@ public class user__notebooks extends AppCompatActivity
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        Intent intent =getIntent();
-        Bundle bundle = intent.getExtras();
-        if(bundle != null)
-        {
-            type = getIntent().getExtras().get("admins").toString();
-        }
-
         ProductRef= FirebaseDatabase.getInstance().getReference().child(Category);
     }
 
@@ -80,20 +74,11 @@ public class user__notebooks extends AppCompatActivity
                                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        if(!type.equals("admins"))
-                                        {
+
                                             Intent intent = new Intent(user__notebooks.this,user_product_detail_activity.class);
                                             intent.putExtra("pid",stationary_product.getPid());
                                             intent.putExtra("category","NoteBooks");
                                             startActivity(intent);
-                                        }
-                                        else{
-                                            Intent intent = new Intent(user__notebooks.this,AdminMaintainProductsActivity.class);
-                                            intent.putExtra("pid",stationary_product.getPid());
-                                            Toast.makeText(user__notebooks.this,"Write down product name",Toast.LENGTH_SHORT).show();
-                                            intent.putExtra("category","NoteBooks");
-                                            startActivity(intent);
-                                        }
 
 
 

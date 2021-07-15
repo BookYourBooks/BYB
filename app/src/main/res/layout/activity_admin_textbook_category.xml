@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminTextbookCategory">
+    tools:context=".Admin.AdminTextbookCategory">
     <RelativeLayout
         android:layout_width="409dp"
         android:layout_height="99dp"

@@ -1,4 +1,4 @@
-package com.example.byb;
+package com.example.byb.Admin;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.byb.MainActivity;
+import com.example.byb.R;
+import com.example.byb.home_activity;
 
 public class AdminAddActivity extends AppCompatActivity {
     public Button add_item;

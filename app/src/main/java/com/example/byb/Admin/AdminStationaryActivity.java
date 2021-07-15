@@ -1,16 +1,14 @@
-package com.example.byb;
+package com.example.byb.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.byb.R;
 
 public class AdminStationaryActivity extends AppCompatActivity {
     private CardView notebooks,accessories,sheets,files,bluebooks,record;

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.byb.Admin.AdminMaintainProductsActivity;
 import com.example.byb.ViewHolder.ProductViewHolder;
 import com.example.byb.model.Stationary_product;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -86,9 +87,8 @@ public class user_sem_3_texrtbook extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                         else{
-                                            Intent intent = new Intent(user_sem_3_texrtbook.this,AdminMaintainProductsActivity.class);
+                                            Intent intent = new Intent(user_sem_3_texrtbook.this, AdminMaintainProductsActivity.class);
                                             intent.putExtra("pid",stationary_product.getPid());
-                                            Toast.makeText(user_sem_3_texrtbook.this,"Write down product name",Toast.LENGTH_SHORT).show();
                                             intent.putExtra("category","3Sem");
                                             startActivity(intent);
                                         }

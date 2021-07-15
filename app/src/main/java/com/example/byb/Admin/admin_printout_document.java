@@ -1,4 +1,4 @@
-package com.example.byb;
+package com.example.byb.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.byb.Prevalent.Prevalent;
+import com.example.byb.R;
 import com.example.byb.ViewHolder.CartViewHolder;
 import com.example.byb.ViewHolder.Documentviewholder;
 import com.example.byb.model.Cart;
