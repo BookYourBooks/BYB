@@ -4,6 +4,7 @@
     package="com.example.byb">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET "/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -54,7 +55,6 @@
         <activity android:name=".user__notebooks" />
         <activity android:name=".user_sem_category" />
         <activity android:name=".user_stationary_category" />
-        <activity android:name=".Home" />
         <activity
             android:name=".SettingsActivity"
             android:theme="@style/Theme.BYB.NoActionBar" />
