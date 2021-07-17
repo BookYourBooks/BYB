@@ -7,8 +7,8 @@
     app:cardElevation="15dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="10dp"
         android:background="@color/colorPrimaryDark">
 
@@ -50,6 +50,17 @@
             android:gravity="center"
             android:layout_marginTop="10dp"/>
         <TextView
+            android:id="@+id/document_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/document_link"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+        <TextView
             android:id="@+id/document_link_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,9 +68,16 @@
             android:textColor="@android:color/white"
             android:textSize="14dp"
             android:textStyle="bold"
-            android:layout_below="@+id/document_link"
+            android:layout_below="@+id/document_name"
             android:gravity="center"
             android:layout_marginTop="10dp"/>
+        <Button
+            android:id="@+id/document_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/document_link_description"
+            android:layout_centerHorizontal="true"
+            android:text="download" />
 
 
     </RelativeLayout>

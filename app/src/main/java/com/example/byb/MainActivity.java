@@ -9,11 +9,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
+import com.rey.material.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.byb.Admin.AdminAddActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,6 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.example.byb.Prevalent.Prevalent;
 
 import com.example.byb.model.users;
+
+import io.paperdb.Paper;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -47,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         admin=(TextView)findViewById(R.id.admin);
         notanadmin=(TextView)findViewById(R.id.notanadmin);
 
+        rememberme = (CheckBox) findViewById(R.id.rememberme);
+        Paper.init(this);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +100,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+        String Userusn = Paper.book().read(Prevalent.userusnkey);
+        String UserPasswordKey = Paper.book().read(Prevalent.userpasswordke);
+
+        if (Userusn != "" && UserPasswordKey != "")
+        {
+            if (!TextUtils.isEmpty(Userusn)  &&  !TextUtils.isEmpty(UserPasswordKey))
+            {
+                Allowaccesstoaccount(Userusn, UserPasswordKey);
+
+                loadingBar.setTitle("Already Logged in");
+                loadingBar.setMessage("Please wait.....");
+                loadingBar.setCanceledOnTouchOutside(false);
+                loadingBar.show();
+            }
+        }
+
     }public void loginuser(){
          String usn= loginusn.getText().toString().trim();
          String password = userpassword.getText().toString().trim();
@@ -121,6 +144,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void Allowaccesstoaccount( String usn, String password){
+
+        if(rememberme.isChecked())
+        {
+            Paper.book().write(Prevalent.userusnkey, usn);
+            Paper.book().write(Prevalent.userpasswordke, password);
+        }
 
         RootRef=FirebaseDatabase.getInstance().getReference();
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -1,7 +1,6 @@
-package com.example.byb;
+package com.example.byb.Admin;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -13,9 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.byb.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,19 +29,18 @@ import com.google.firebase.storage.UploadTask;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Locale;
 
-public class AdminAddNewTextbookActivity extends AppCompatActivity {
-    private String categoryname,pname,description,price,saveCurrentDate, saveCurrentTime;
-    private EditText newproductname , newproductdescription,newproductprice;
-    private Button addnewproductbtn;
-    private ImageView addnewproductimage;
-    private static final int GalleryPick = 1;
-    private Uri ImageUri;
-    private ProgressDialog loadingBar;
-    private String productRandomKey, downloadImageUrl;
-    private StorageReference ProductImagesRef;
-    private DatabaseReference ProductRef;
+public class AdminAddNewProductActivity extends AppCompatActivity {
+  private String categoryname,pname,description,price,saveCurrentDate, saveCurrentTime;
+  private EditText newproductname , newproductdescription,newproductprice;
+  private Button addnewproductbtn;
+  private ImageView addnewproductimage;
+  private static final int GalleryPick = 1;
+  private Uri ImageUri;
+  private ProgressDialog loadingBar;
+  private String productRandomKey, downloadImageUrl;
+  private StorageReference ProductImagesRef;
+  private DatabaseReference ProductRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,13 +141,13 @@ public class AdminAddNewTextbookActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 String message=e.toString();
-                Toast.makeText(AdminAddNewTextbookActivity.this,"ERROR"+message,Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminAddNewProductActivity.this,"ERROR"+message,Toast.LENGTH_SHORT).show();
                 loadingBar.dismiss();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(AdminAddNewTextbookActivity.this,"Product image uploaded Successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminAddNewProductActivity.this,"Product image uploaded Successfully",Toast.LENGTH_SHORT).show();
                 Task<Uri>urlTask=uploadtask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                     @Override
                     public Task<Uri> then(@NonNull  Task<UploadTask.TaskSnapshot> task) throws Exception {
@@ -168,7 +166,7 @@ public class AdminAddNewTextbookActivity extends AppCompatActivity {
                         {
                             downloadImageUrl = task.getResult().toString();
 
-                            Toast.makeText(AdminAddNewTextbookActivity.this, "got the Product image Url Successfully...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AdminAddNewProductActivity.this, "got the Product image Url Successfully...", Toast.LENGTH_SHORT).show();
 
                             SaveProductInfoToDatabase();
                         }
@@ -198,15 +196,15 @@ public class AdminAddNewTextbookActivity extends AppCompatActivity {
                     public void onComplete(@NonNull  Task<Void> task) {
                         if (task.isSuccessful())
                         {
-                            Intent intent = new Intent(AdminAddNewTextbookActivity.this, AdminTextbookCategory.class);
+                            Intent intent = new Intent(AdminAddNewProductActivity.this, AdminStationaryActivity.class);
                             startActivity(intent);
                             loadingBar.dismiss();
-                            Toast.makeText(AdminAddNewTextbookActivity.this, "Product is added successfully..", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AdminAddNewProductActivity.this, "Product is added successfully..", Toast.LENGTH_SHORT).show();
                         }
                         else
                         {   loadingBar.dismiss();
                             String message = task.getException().toString();
-                            Toast.makeText(AdminAddNewTextbookActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AdminAddNewProductActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

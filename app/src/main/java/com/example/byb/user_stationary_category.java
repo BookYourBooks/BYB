@@ -82,7 +82,7 @@ public class user_stationary_category extends AppCompatActivity {
         else{notebooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(user_stationary_category.this, user__notebooks.class);
+                Intent intent1 = new Intent(user_stationary_category.this, user_notebook_maintain.class);
                 intent.putExtra("admins","admins");
                 startActivity(intent1);
             }

@@ -1,4 +1,4 @@
-package com.example.byb;
+package com.example.byb.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.byb.Prevalent.Prevalent;
+import com.example.byb.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -41,7 +41,7 @@ public class admin_announcements extends AppCompatActivity {
         userMap.put("description",admin_announcement.getText().toString());
         ref.updateChildren(userMap);
 
-        Intent intent = new Intent(admin_announcements.this,AdminAddActivity.class);
+        Intent intent = new Intent(admin_announcements.this, AdminAddActivity.class);
         Toast.makeText(admin_announcements.this,"Announcement updated Successfully",Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }

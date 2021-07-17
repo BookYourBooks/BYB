@@ -7,26 +7,26 @@
     tools:context=".user_print_upload_document_link">
 
     <EditText
-        android:id="@+id/new_user_document_description"
+        android:id="@+id/new_user_document_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="250dp"
         android:layout_marginRight="50dp"
-        android:hint="Product Description"
+        android:hint="Document Name"
         android:inputType="textMultiLine"
         android:padding="20dp"
         android:textColorHint="@color/black" />
     <EditText
-        android:id="@+id/new_user_document_link"
+        android:id="@+id/new_user_document_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/new_user_document_description"
+        android:layout_below="@id/new_user_document_name"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:hint="Document LInk"
+        android:hint="Document Description"
         android:inputType="textMultiLine"
         android:padding="20dp"
         android:textColorHint="@color/black" />
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:inputType="textMultiLine"
-        android:layout_below="@+id/new_user_document_link"
+        android:layout_below="@+id/new_user_document_description"
         android:layout_marginTop="6dp"
         android:hint="Number of Copies"
         android:textColorHint="@color/black"

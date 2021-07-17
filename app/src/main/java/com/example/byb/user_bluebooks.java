@@ -11,8 +11,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
+import com.example.byb.Admin.AdminMaintainProductsActivity;
 import com.example.byb.ViewHolder.ProductViewHolder;
 import com.example.byb.model.Stationary_product;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -87,7 +87,7 @@ public class user_bluebooks extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                         else{
-                                            Intent intent = new Intent(user_bluebooks.this,AdminMaintainProductsActivity.class);
+                                            Intent intent = new Intent(user_bluebooks.this, AdminMaintainProductsActivity.class);
                                             intent.putExtra("pid",stationary_product.getPid());
                                             intent.putExtra("category","Blue Books");
                                             startActivity(intent);

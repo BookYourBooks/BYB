@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.byb.Admin.AdminMaintainProductsActivity;
 import com.example.byb.ViewHolder.ProductViewHolder;
 import com.example.byb.model.Stationary_product;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -78,22 +79,10 @@ public class user_c_cycle_textbook extends AppCompatActivity {
                                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        if(!type.equals("admins"))
-                                        {
                                             Intent intent = new Intent(user_c_cycle_textbook.this,user_product_detail_activity.class);
                                             intent.putExtra("pid",stationary_product.getPid());
                                             intent.putExtra("category","CCycle");
                                             startActivity(intent);
-                                        }
-                                        else{
-                                            Intent intent = new Intent(user_c_cycle_textbook.this,AdminMaintainProductsActivity.class);
-                                            intent.putExtra("pid",stationary_product.getPid());
-                                            Toast.makeText(user_c_cycle_textbook.this,"Write down product name",Toast.LENGTH_SHORT).show();
-                                            intent.putExtra("category","CCycle");
-                                            startActivity(intent);
-                                        }
-
-
 
                                     }
                                 });

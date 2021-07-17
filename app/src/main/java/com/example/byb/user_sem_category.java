@@ -96,8 +96,7 @@ public class user_sem_category extends AppCompatActivity {
         else{     ccycle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(user_sem_category.this, user_c_cycle_textbook.class);
-                Toast.makeText(user_sem_category.this,"Write down product name",Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(user_sem_category.this, user_c_cycle_textbook_maintain.class);
                 intent.putExtra("admins","admins");
                 startActivity(intent1);
             }

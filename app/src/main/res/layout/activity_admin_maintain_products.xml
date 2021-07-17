@@ -9,7 +9,7 @@
     android:layout_marginStart="15dp"
     android:layout_marginLeft="15dp"
     app:cardElevation="15dp"
-    tools:context=".AdminMaintainProductsActivity">
+    tools:context=".Admin.AdminMaintainProductsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

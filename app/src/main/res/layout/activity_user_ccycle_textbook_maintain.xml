@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user_sem_5_textbook">
+    tools:context=".user_c_cycle_textbook_maintain">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
