@@ -47,6 +47,7 @@
         android:id="@+id/cart_list"
         android:layout_below="@+id/rl11"
         android:layout_width="match_parent"
+        android:background="@drawable/admin_login_imagee"
         android:layout_height="match_parent">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -57,7 +58,7 @@
         android:layout_centerHorizontal="true"
         android:layout_height="50dp"
         android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
-        android:background="@drawable/custom_roundbutton"
+        android:background="@drawable/custom_button"
         android:layout_alignParentBottom="true"
         android:text="Next"
         android:textColor="@android:color/white"
