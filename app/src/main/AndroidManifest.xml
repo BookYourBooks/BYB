@@ -15,9 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB"
         tools:replace="android:theme">
-        <activity android:name=".ChatActivity"></activity>
-        <activity android:name=".ChatHomeActivity"
-            android:theme="@style/Theme.BYB.NoActionBar"/>
+        <activity android:name=".model.Messages"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity
+            android:name=".ChatHomeActivity"
+            android:theme="@style/Theme.BYB.NoActionBar" />
         <activity android:name=".user_c_cycle_textbook_maintain" />
         <activity android:name=".user_notebook_maintain" />
         <activity android:name=".ResetPasswordActivity" />

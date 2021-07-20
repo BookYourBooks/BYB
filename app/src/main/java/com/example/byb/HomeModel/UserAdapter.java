@@ -1,5 +1,5 @@
 
-    package com.example.byb;
+    package com.example.byb.HomeModel;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.byb.ChatActivity;
+import com.example.byb.R;
 import com.example.byb.model.users;
 import com.squareup.picasso.Picasso;
 
@@ -26,7 +28,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
         ArrayList<users> usersArrayList;
         private ImageView imageView;
 
-        public UserAdapter(ChatHomeActivity ChatHomeActivity, ArrayList<users> usersArrayList) {
+        public UserAdapter(com.example.byb.ChatHomeActivity ChatHomeActivity, ArrayList<users> usersArrayList) {
             this.ChatHomeActivity=ChatHomeActivity;
             this.usersArrayList=usersArrayList;
         }
@@ -49,7 +51,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(ChatHomeActivity,ChatActivity.class);
+                    Intent intent=new Intent(ChatHomeActivity, ChatActivity.class);
                     intent.putExtra("Name",Users.getName());
                     intent.putExtra("Receiver Image",Users.getImage());
                     intent.putExtra("UID",Users.getUsn());
