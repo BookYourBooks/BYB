@@ -34,7 +34,9 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
         <EditText
             android:id="@+id/loginusn"
+            android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
             android:layout_width="352dp"
+            android:background="@drawable/custom_input"
             android:layout_height="56dp"
             android:layout_marginTop="20dp"
             android:maxLength="10"
@@ -49,10 +51,12 @@
             android:id="@+id/userpassword"
             android:layout_width="352dp"
             android:layout_height="56dp"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
             android:layout_marginTop="20dp"
             android:layout_below="@id/loginusn"
             android:layout_centerHorizontal="true"
             android:ems="10"
+            android:background="@drawable/custom_input"
             android:hint="Password"
             android:inputType="textPersonName"
             android:textColorHint="@color/black" />
@@ -81,6 +85,7 @@
             android:id="@+id/loginbtn"
             android:background="@drawable/custom_button"
             android:layout_width="352dp"
+            android:textColor="@color/white"
             android:layout_height="56dp"
             android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true"

@@ -6,9 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".user_personal_printout">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/user_photo_upload"
+        android:background="@drawable/custom_button"
         android:layout_width="352dp"
+        android:textColor="@color/white"
         android:layout_height="56dp"
         android:layout_marginTop="220dp"
         android:text="upload Photo"
@@ -17,10 +19,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/user_document_upload"
         android:layout_width="352dp"
         android:layout_height="56dp"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_button"
         android:text="upload Document"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

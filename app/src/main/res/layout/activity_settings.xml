@@ -136,6 +136,7 @@
         android:id="@+id/security_question_button"
         android:layout_width="352dp"
         android:layout_height="70dp"
+        android:textColor="@color/white"
         android:background="@drawable/custom_button"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/settings_sec"

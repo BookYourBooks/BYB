@@ -35,6 +35,8 @@
 
                 <EditText
                     android:id="@+id/fullname"
+                    android:background="@drawable/custom_input"
+                    android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                     android:layout_width="352dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
@@ -49,6 +51,8 @@
                     android:layout_width="352dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
+                    android:background="@drawable/custom_input"
+                    android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                     android:ems="10"
                     android:hint="Branch"
                     android:inputType="textPersonName"
@@ -61,7 +65,9 @@
                     android:layout_gravity="center"
                     android:ems="10"
                     android:hint="USN"
+                    android:background="@drawable/custom_input"
                     android:inputType="textPersonName"
+                    android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                     android:textColorHint="@color/black" />
 
                 <EditText
@@ -71,6 +77,8 @@
                     android:layout_gravity="center"
                     android:ems="10"
                     android:hint="Mobile Number"
+                    android:background="@drawable/custom_input"
+                    android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
                     android:inputType="phone"
                     android:textColorHint="@color/black" />
 
@@ -80,17 +88,21 @@
                     android:layout_height="70dp"
                     android:layout_gravity="center"
                     android:ems="10"
+                    android:drawableStart="@drawable/ic_baseline_email_24"
                     android:hint="Email"
+                    android:background="@drawable/custom_input"
                     android:inputType="textEmailAddress"
                     android:textColorHint="@color/black" />
 
                 <EditText
                     android:id="@+id/registeredpassword"
                     android:layout_width="352dp"
+                    android:drawableStart="@drawable/ic_baseline_lock_24"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
                     android:ems="10"
                     android:hint="Password"
+                    android:background="@drawable/custom_input"
                     android:inputType="textPassword"
                     android:textColorHint="@color/black" />
 
@@ -99,13 +111,16 @@
                     android:background="@drawable/custom_button"
                     android:layout_width="352dp"
                     android:layout_height="56dp"
+                    android:textColor="@color/white"
                     android:layout_gravity="center"
                     android:text="register" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/registerlogin"
-                    android:layout_width="352dp"
-                    android:layout_height="56dp"
+                    android:background="@drawable/custom_roundbutton"
+                    android:layout_width="150dp"
+                    android:textColor="@color/white"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:text="log in" />
 

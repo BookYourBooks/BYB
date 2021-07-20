@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/purple_700">
 
         <TextView
             android:id="@+id/document_link_usn"
@@ -71,8 +71,10 @@
             android:layout_below="@+id/document_name"
             android:gravity="center"
             android:layout_marginTop="10dp"/>
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/custom_roundbutton"
             android:id="@+id/document_download"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/document_link_description"

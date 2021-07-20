@@ -65,19 +65,25 @@
         />
 
 
-
-
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/pd_cart_btn_cart"
-        android:layout_width="match_parent"
+        android:layout_width="352dp"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_below="@+id/number_btn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="127dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="110dp"
         android:background="@drawable/custom_button"
         android:text="Add to Cart"
         android:textColor="@color/white"
-        android:textSize="18dp"
-        />
+        android:textSize="18dp" />
 
 </RelativeLayout>
