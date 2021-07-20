@@ -77,6 +77,8 @@
         android:layout_centerHorizontal="true"
         />
     <EditText
+
+        android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
         android:id="@+id/settings_fullname"
         android:layout_width="352dp"
         android:layout_height="70dp"
@@ -87,8 +89,11 @@
         android:hint="Name"
         android:inputType="textPersonName"
         android:paddingTop="40dp"
-        android:textColorHint="@color/black" />
+        android:textColorHint="@color/black"
+        android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24" />
     <EditText
+
+        android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
         android:id="@+id/settings_userbranch"
         android:layout_width="352dp"
         android:layout_height="70dp"
@@ -97,10 +102,13 @@
         android:ems="10"
         android:hint="Branch"
         android:inputType="textPersonName"
-        android:textColorHint="@color/black" />
+        android:textColorHint="@color/black"
+        android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24" />
 
 
     <EditText
+
+        android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
         android:id="@+id/settings_usermobileno"
         android:layout_width="352dp"
         android:layout_height="70dp"
@@ -109,9 +117,12 @@
         android:ems="10"
         android:hint="Mobile Number"
         android:inputType="phone"
-        android:textColorHint="@color/black" />
+        android:textColorHint="@color/black"
+        android:drawableLeft="@drawable/ic_baseline_phone_iphone_24" />
 
     <EditText
+
+        android:drawableStart="@drawable/ic_baseline_email_24"
         android:id="@+id/settings_useremail"
         android:layout_width="352dp"
         android:layout_height="70dp"
@@ -120,8 +131,11 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/black" />
+        android:textColorHint="@color/black"
+        android:drawableLeft="@drawable/ic_baseline_email_24" />
     <EditText
+
+        android:drawableStart="@drawable/ic_address"
         android:id="@+id/settings_sec"
         android:layout_width="352dp"
         android:layout_height="70dp"
@@ -130,7 +144,8 @@
         android:ems="10"
         android:hint="Address"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/black" />
+        android:textColorHint="@color/black"
+        android:drawableLeft="@drawable/ic_address" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/security_question_button"

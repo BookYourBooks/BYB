@@ -9,6 +9,7 @@
         android:id="@+id/product_image_details"
         android:layout_width="match_parent"
         android:layout_height="260dp"
+        android:background="@drawable/admin_login_imagee"
         android:scaleType="centerCrop"
         />
 
@@ -75,6 +76,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
         android:layout_marginTop="127dp"
@@ -84,6 +87,6 @@
         android:background="@drawable/custom_button"
         android:text="Add to Cart"
         android:textColor="@color/white"
-        android:textSize="18dp" />
+        android:textSize="24dp" />
 
 </RelativeLayout>

@@ -14,7 +14,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/admin_login_imagee"
         >
 
 
@@ -38,8 +38,8 @@
             android:padding="12dp"
             android:layout_margin="5dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             />
 
         <EditText
@@ -54,8 +54,8 @@
             android:padding="12dp"
             android:layout_margin="5dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             />
 
         <EditText
@@ -70,41 +70,47 @@
             android:padding="12dp"
             android:layout_margin="5dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             />
+
         <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/apply_changes_btn"
+            android:id="@+id/apply_changes_btn"
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/product_description_maintain"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/product_description_maintain"
+            android:layout_marginTop="50dp"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/custom_button"
+            android:gravity="center_horizontal"
+            android:padding="12dp"
             android:text="Apply Changes"
-        android:textAlignment="center"
-            android:background="@drawable/custom_roundbutton"
-        android:gravity="center_horizontal"
-        android:textSize="18sp"
-        android:padding="12dp"
-        android:layout_margin="5dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
 
-        />
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/admin_delete_btn"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/apply_changes_btn"
             android:text="Delete Item"
             android:textAlignment="center"
             android:gravity="center_horizontal"
             android:textSize="18sp"
+            android:layout_width="240dp"
+            android:layout_centerHorizontal="true"
             android:padding="12dp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:layout_marginTop="70dp"
             android:layout_marginBottom="100dp"
-            android:background="@drawable/custom_roundbutton"
+            android:background="@drawable/custom_button"
 
             />
 

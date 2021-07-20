@@ -4,28 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/admin_login_imagee"
     tools:context=".Admin.AdminAddActivity">
 
 
     <EditText
         android:id="@+id/admin_welcome"
         android:layout_width="match_parent"
+        android:textStyle="italic"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:hint="                       WELCOME ADMIN !!"
         android:inputType="textMultiLine"
         android:padding="20dp"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="50dp" />
+        tools:layout_editor_absoluteX="50dp"
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/custom_button"
         android:textColor="@color/white"
         android:id="@+id/addannouncement"
         android:layout_below="@id/admin_welcome"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
         android:layout_marginTop="50dp"
         android:layout_width="352dp"
+        android:textSize="15dp"
         android:layout_height="wrap_content"
         android:text="update announcement"
         app:layout_constraintBottom_toTopOf="@+id/addbtn"
@@ -33,13 +39,16 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.933" />
+        app:layout_constraintVertical_bias="0.933"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/custom_button"
         android:textColor="@color/white"
         android:id="@+id/addbtn"
+        android:textSize="15dp"
         android:layout_width="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
         android:layout_height="wrap_content"
         android:width="352dp"
         android:text="Add Items"
@@ -48,20 +57,24 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
+        app:layout_constraintVertical_bias="0.42"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
   
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/custom_button"
         android:textColor="@color/white"
         android:id="@+id/printout_photo"
         android:layout_width="352dp"
+        android:textSize="15dp"
         android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
         android:text="printout photos"
         app:layout_constraintBottom_toTopOf="@+id/printout_doc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/addbtn"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
         android:id="@+id/loginbtnaddact"
         android:background="@drawable/custom_button"
         android:layout_width="wrap_content"
@@ -73,12 +86,15 @@
         android:layout_width="352dp"
         android:layout_height="wrap_content"
         android:text="printout Docs"
+        android:textSize="15dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.622" />
+        app:layout_constraintVertical_bias="0.622"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
 
 
     <androidx.appcompat.widget.AppCompatButton
@@ -90,10 +106,13 @@
         android:text="CHECK NEW ORDERS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="15dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/printout_doc"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.174"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:textColor="@color/white"
@@ -101,21 +120,26 @@
         android:layout_width="352dp"
         android:layout_height="wrap_content"
         android:text="MAINTAIN PRODUCTS"
+        android:textSize="15dp"
         android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
         app:layout_constraintTop_toBottomOf="@+id/admin_check_new_order"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.174"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:background="@drawable/custom_roundbutton"
+        android:background="@drawable/custom_buttonn"
         android:textColor="@color/white"
         android:id="@+id/loginbtnaddact"
         android:layout_width="150dp"
+        android:elevation="100dp"
         android:layout_height="wrap_content"
         android:text="Log out"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"

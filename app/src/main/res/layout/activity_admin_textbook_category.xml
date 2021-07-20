@@ -395,8 +395,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/admin_login_add_new_textbook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:text="add more"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -404,9 +404,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="715dp"
+        android:textSize="24dp"
         android:width="352dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+
         android:background="@drawable/custom_roundbutton"
-        />
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
 
 
 

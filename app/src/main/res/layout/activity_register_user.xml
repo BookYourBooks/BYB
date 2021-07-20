@@ -21,6 +21,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
+                android:background="@drawable/loginn_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -28,7 +29,7 @@
                 <ImageView
                     android:id="@+id/bmsitlogo"
                     android:layout_width="291dp"
-                    android:layout_height="303dp"
+                    android:layout_height="274dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     app:srcCompat="@drawable/bmsitlogo" />
@@ -44,7 +45,8 @@
                     android:hint="Full Name"
                     android:inputType="textPersonName"
                     android:paddingTop="40dp"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24" />
 
                 <EditText
                     android:id="@+id/userbranch"
@@ -56,7 +58,8 @@
                     android:ems="10"
                     android:hint="Branch"
                     android:inputType="textPersonName"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24" />
 
                 <EditText
                     android:id="@+id/userusn"
@@ -68,7 +71,8 @@
                     android:background="@drawable/custom_input"
                     android:inputType="textPersonName"
                     android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24" />
 
                 <EditText
                     android:id="@+id/usermobileno"
@@ -80,7 +84,8 @@
                     android:background="@drawable/custom_input"
                     android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
                     android:inputType="phone"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:drawableLeft="@drawable/ic_baseline_phone_iphone_24" />
 
                 <EditText
                     android:id="@+id/registeredemail"
@@ -92,7 +97,8 @@
                     android:hint="Email"
                     android:background="@drawable/custom_input"
                     android:inputType="textEmailAddress"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:drawableLeft="@drawable/ic_baseline_email_24" />
 
                 <EditText
                     android:id="@+id/registeredpassword"
@@ -104,16 +110,20 @@
                     android:hint="Password"
                     android:background="@drawable/custom_input"
                     android:inputType="textPassword"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:drawableLeft="@drawable/ic_baseline_lock_24" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/registeruser"
                     android:background="@drawable/custom_button"
                     android:layout_width="352dp"
-                    android:layout_height="56dp"
+                    android:layout_height="45dp"
                     android:textColor="@color/white"
                     android:layout_gravity="center"
-                    android:text="register" />
+                    android:text="register"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:textSize="22dp"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/registerlogin"
@@ -122,7 +132,8 @@
                     android:textColor="@color/white"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:text="log in" />
+                    android:text="log in"
+                    android:textSize="18dp"/>
 
             </LinearLayout>
         </ScrollView>

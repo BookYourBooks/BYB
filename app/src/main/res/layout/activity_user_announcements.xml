@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/announment_image"
     tools:context=".user_announcements">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="352dp"
         android:layout_height="40dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="4dp"
         android:gravity="center_horizontal"
         android:text="ANNOUNCEMENT"
         android:textColor="@color/purple_500"
@@ -24,6 +25,7 @@
         android:id="@+id/user_announcement"
         android:layout_width="352dp"
         android:layout_height="80dp"
+        android:background="@drawable/custom_input"
         android:gravity="center_horizontal"
         android:text="TextView"
         android:textColor="@color/black"
@@ -33,5 +35,5 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.215" />
+        app:layout_constraintVertical_bias="0.718" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,43 +16,46 @@
             android:id="@+id/slogancategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="27dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp"
+            android:gravity="center_horizontal"
             android:text="Add New Product"
-            android:textSize="26sp"
             android:textAlignment="center"
             android:textColor="@color/purple_500"
-            android:textStyle="bold"
-            android:gravity="center_horizontal" />
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:id="@+id/layoutcategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/slogancategory"
-            android:orientation="horizontal"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="45dp"
             android:gravity="center"
-            android:layout_marginTop="45dp">
+            android:orientation="horizontal">
 
 
         </LinearLayout>
     </RelativeLayout>
+
     <GridLayout
 
         android:layout_width="match_parent"
+        android:background="@drawable/cut_card_background"
         android:layout_height="match_parent"
-        android:alignmentMode="alignMargins"
         android:layout_marginTop="100dp"
+        android:alignmentMode="alignMargins"
         android:columnCount="2"
-        android:rowCount="3"
         android:columnOrderPreserved="false"
-        android:padding="14dp">
+        android:padding="14dp"
+        android:rowCount="3">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/admin_stationery_notebooks"
-            android:layout_height="0dp"
             android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
@@ -72,17 +75,17 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/user_stationery_notebook"/>
+                    android:src="@drawable/user_stationery_notebook" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NoteBooks"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
                     android:layout_gravity="center"
-                    android:textAlignment="center"/>
+                    android:text="NoteBooks"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -92,8 +95,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/admin_stationery_accesories"
-            android:layout_height="0dp"
             android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
@@ -113,17 +116,17 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/user_stationery_accesories"/>
+                    android:src="@drawable/user_stationery_accesories" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Stationery"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
                     android:layout_gravity="center"
-                    android:textAlignment="center"/>
+                    android:text="Stationery"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -132,8 +135,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/admin_stationery_a4sheets"
-            android:layout_height="0dp"
             android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
@@ -153,17 +156,17 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/user_stationery_a4sheet"/>
+                    android:src="@drawable/user_stationery_a4sheet" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="A4 Sheets"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
                     android:layout_gravity="center"
-                    android:textAlignment="center"/>
+                    android:text="A4 Sheets"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -173,8 +176,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/admin_stationery_files"
-            android:layout_height="0dp"
             android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
@@ -194,17 +197,17 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/user_stationery_files"/>
+                    android:src="@drawable/user_stationery_files" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Files"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
                     android:layout_gravity="center"
-                    android:textAlignment="center"/>
+                    android:text="Files"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -213,8 +216,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/admin_stationery_bluebooks"
-            android:layout_height="0dp"
             android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
@@ -234,17 +237,17 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/user_stationery_bluebook"/>
+                    android:src="@drawable/user_stationery_bluebook" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Blue Books"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
                     android:layout_gravity="center"
-                    android:textAlignment="center"/>
+                    android:text="Blue Books"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -254,8 +257,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/admin_stationery_record"
-            android:layout_height="0dp"
             android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
@@ -275,17 +278,17 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/user_stationery_recordbook"/>
+                    android:src="@drawable/user_stationery_recordbook" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Record"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
                     android:layout_gravity="center"
-                    android:textAlignment="center"/>
+                    android:text="Record"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -294,18 +297,20 @@
     </GridLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:textColor="@color/white"
         android:id="@+id/admin_login_add_new_product"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="715dp"
+        android:width="352dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:background="@drawable/custom_roundbutton"
         android:text="add more"
-        android:background="@drawable/custom_button"
+        android:textSize="19dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="715dp"
-        android:width="352dp"
-        />
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
