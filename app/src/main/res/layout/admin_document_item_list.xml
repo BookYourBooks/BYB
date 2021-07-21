@@ -82,7 +82,7 @@
             android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
             android:layout_below="@id/document_link_description"
             android:layout_centerHorizontal="true"
-            android:text="download" />
+            android:text="DOWNLOAD" />
 
 
     </RelativeLayout>

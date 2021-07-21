@@ -36,6 +36,7 @@
 
                 <EditText
                     android:id="@+id/fullname"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/custom_input"
                     android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                     android:layout_width="352dp"
@@ -44,7 +45,7 @@
                     android:ems="10"
                     android:hint="Full Name"
                     android:inputType="textPersonName"
-                    android:paddingTop="40dp"
+                    android:paddingTop="10dp"
                     android:textColorHint="@color/black"
                     android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24" />
 
@@ -53,6 +54,7 @@
                     android:layout_width="352dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/custom_input"
                     android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
                     android:ems="10"
@@ -68,6 +70,8 @@
                     android:layout_gravity="center"
                     android:ems="10"
                     android:hint="USN"
+                    android:maxLength="10"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/custom_input"
                     android:inputType="textPersonName"
                     android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
@@ -81,9 +85,11 @@
                     android:layout_gravity="center"
                     android:ems="10"
                     android:hint="Mobile Number"
+                    android:maxLength="10"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/custom_input"
                     android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
-                    android:inputType="phone"
+                    android:inputType="number"
                     android:textColorHint="@color/black"
                     android:drawableLeft="@drawable/ic_baseline_phone_iphone_24" />
 
@@ -95,6 +101,7 @@
                     android:ems="10"
                     android:drawableStart="@drawable/ic_baseline_email_24"
                     android:hint="Email"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/custom_input"
                     android:inputType="textEmailAddress"
                     android:textColorHint="@color/black"
@@ -108,6 +115,7 @@
                     android:layout_gravity="center"
                     android:ems="10"
                     android:hint="Password"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/custom_input"
                     android:inputType="textPassword"
                     android:textColorHint="@color/black"
@@ -121,6 +129,7 @@
                     android:textColor="@color/white"
                     android:layout_gravity="center"
                     android:text="register"
+                    android:layout_marginTop="5dp"
                     android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
                     android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
                     android:textSize="22dp"/>
@@ -133,7 +142,9 @@
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:text="log in"
+                    android:layout_marginTop="5dp"
                     android:textSize="18dp"/>
+
 
             </LinearLayout>
         </ScrollView>

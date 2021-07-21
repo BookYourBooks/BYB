@@ -60,7 +60,7 @@
             android:ems="10"
             android:background="@drawable/custom_input"
             android:hint="Password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textColorHint="@color/black"
             android:drawableLeft="@drawable/ic_baseline_lock_24" />
 

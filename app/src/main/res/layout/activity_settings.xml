@@ -41,7 +41,7 @@
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:layout_marginLeft="315dp"
+                    android:layout_marginLeft="300dp"
                     android:layout_alignParentTop="true"
                     />
 
@@ -86,9 +86,10 @@
         android:layout_below="@id/settings_profile_image_change_btn"
         android:layout_centerHorizontal="true"
         android:ems="10"
+        android:layout_marginTop="6dp"
         android:hint="Name"
         android:inputType="textPersonName"
-        android:paddingTop="40dp"
+        android:paddingTop="10dp"
         android:textColorHint="@color/black"
         android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24" />
     <EditText
@@ -115,8 +116,9 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/settings_userbranch"
         android:ems="10"
+        android:maxLength="10"
         android:hint="Mobile Number"
-        android:inputType="phone"
+        android:inputType="number"
         android:textColorHint="@color/black"
         android:drawableLeft="@drawable/ic_baseline_phone_iphone_24" />
 
@@ -143,7 +145,7 @@
         android:layout_below="@id/settings_useremail"
         android:ems="10"
         android:hint="Address"
-        android:inputType="textEmailAddress"
+        android:inputType="textMultiLine"
         android:textColorHint="@color/black"
         android:drawableLeft="@drawable/ic_address" />
 
@@ -155,10 +157,13 @@
         android:background="@drawable/custom_button"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/settings_sec"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
         android:ems="10"
         android:textSize="30dp"
+        android:layout_marginTop="15dp"
         android:text="Set Security Questions"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/black" />
+        android:textColorHint="@color/black"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
 
 </RelativeLayout>
