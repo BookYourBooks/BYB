@@ -44,8 +44,8 @@ public class AdminmsgAdapter extends RecyclerView.Adapter<AdminmsgAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
         users Users = adminArrayList.get(position);
-
         holder.user_name.setText(Users.getName());
+        holder.user_status.setText(Users.getStatus());
         Picasso.get().load(Users.getImage()).into(holder.profile_image_chat);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

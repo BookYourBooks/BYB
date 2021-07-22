@@ -6,134 +6,161 @@
     android:layout_height="match_parent"
     tools:context=".Admin.AdminCategoryActivity">
 
-    <LinearLayout
-        android:id="@+id/admin_category_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#F7FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <LinearLayout
-            android:id="@+id/admin_stationary"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="16dp"
+            android:background="#F7FFFFFF"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/stationary" />
 
-            <TextView
-                android:layout_width="150dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Stationery"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="50dp"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/bmsit_front_pic" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <LinearLayout
+                    android:id="@+id/admin_stationary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/stationary" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Stationery"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/admin_textbooks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/books" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="TextBooks"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <LinearLayout
+                    android:id="@+id/admin_labmanual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/home_lab_manual" />
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Lab Manual"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/admin_forms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/home_forms" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Forms"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/admin_textbooks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/books" />
-
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="TextBooks"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-
-        app:layout_constraintTop_toBottomOf="@+id/admin_category_top">
-
-
-        <LinearLayout
-            android:id="@+id/admin_labmanual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/home_lab_manual" />
-
-            <TextView
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Lab Manual"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/admin_forms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/home_forms" />
-
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Forms"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-
-
-
-
-    </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

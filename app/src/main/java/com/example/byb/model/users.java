@@ -1,12 +1,12 @@
 package com.example.byb.model;
 
 public class users {
-    private String branch,email,mobileno,name,password,usn,image,sec;
+    private String branch,email,mobileno,name,password,usn,image,sec,status;
     public users(){
 
     }
 
-    public users(String branch, String email, String mobileno, String name, String password, String usn) {
+    public users(String branch, String email, String mobileno, String name, String password, String usn,String status) {
         this.branch = branch;
         this.email = email;
         this.mobileno = mobileno;
@@ -15,6 +15,15 @@ public class users {
         this.usn = usn;
         this.image=image;
         this.sec=sec;
+        this.status=status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getSec() {

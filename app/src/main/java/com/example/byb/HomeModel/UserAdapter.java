@@ -46,6 +46,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
             users Users = usersArrayList.get(position);
 
             holder.user_name.setText(Users.getName());
+            holder.user_status.setText(Users.getStatus());
             Picasso.get().load(Users.getImage()).into(holder.profile_image_chat);
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
