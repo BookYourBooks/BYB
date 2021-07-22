@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.byb">
 
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET " />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -14,21 +13,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BYB"
+        android:theme="@style/Theme.BYB.NoActionBar"
         tools:replace="android:theme">
-      
-        <activity android:name=".model.Messages" />
+        <activity android:name=".AdminChatActivity"></activity>
+        <activity android:name=".ChatHomeAdmin" />
         <activity android:name=".ChatActivity" />
         <activity
             android:name=".ChatHomeActivity"
             android:theme="@style/Theme.BYB.NoActionBar" />
-        <activity android:name=".splash_screen"
-            android:theme="@style/Theme.AppCompat.NoActionBar"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name=".splash_screen"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter> />
-      
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".user_c_cycle_textbook_maintain" />
         <activity android:name=".user_notebook_maintain" />
         <activity android:name=".ResetPasswordActivity" />

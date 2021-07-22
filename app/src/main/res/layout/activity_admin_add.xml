@@ -130,23 +130,39 @@
         app:layout_constraintTop_toBottomOf="@+id/admin_check_new_order"
         app:layout_constraintVertical_bias="0.174"
         android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
-
     <androidx.appcompat.widget.AppCompatButton
-        android:background="@drawable/custom_buttonn"
         android:textColor="@color/white"
-        android:id="@+id/loginbtnaddact"
-        android:layout_width="150dp"
-        android:elevation="100dp"
+        android:id="@+id/messagewithuser_btn"
+        android:layout_width="352dp"
         android:layout_height="wrap_content"
-        android:text="Log out"
-        android:textSize="20dp"
-        android:layout_marginTop="15dp"
+        android:text="Messages"
+        android:textSize="15dp"
+        android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
         app:layout_constraintTop_toBottomOf="@+id/maintain_btn"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.174"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginbtnaddact"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/custom_buttonn"
+        android:elevation="100dp"
+        android:text="Log out"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messagewithuser_btn"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/admin_welcomepage"

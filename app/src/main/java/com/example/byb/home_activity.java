@@ -130,9 +130,19 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
                         startActivity(intent8);
                         break;
                     case R.id.nav_settings:
-                        Intent intent2 = new Intent(home_activity.this , SettingsActivity.class);
+
+                    if(type.equals("admins")) {
+                        Intent intent9 = new Intent(home_activity.this , SettingsActivity.class);
+                        intent.putExtra("member","admins");
+                        startActivity(intent9);
+                        break;
+
+                    }else {Intent intent2 = new Intent(home_activity.this , SettingsActivity.class);
+                        intent.putExtra("member","users");
                         startActivity(intent2);
                         break;
+
+                    }
                     case R.id.nav_logout:
                         Intent intent3 = new Intent(home_activity.this , MainActivity.class);
                         Paper.book().destroy();

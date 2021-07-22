@@ -1,14 +1,13 @@
 package com.example.byb;
 
-import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Bundle;
+
 import com.example.byb.HomeModel.AdminmsgAdapter;
-import com.example.byb.HomeModel.UserAdapter;
 import com.example.byb.model.users;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -21,13 +20,14 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class ChatHomeActivity extends AppCompatActivity {
+public class ChatHomeAdmin extends AppCompatActivity {
+
 
     FirebaseAuth auth;
     RecyclerView mainUserRecyclerView;
-    UserAdapter adapter;
+    AdminmsgAdapter adapter;
     FirebaseDatabase database;
-    ArrayList<users> usersArrayList;
+    ArrayList<users> adminArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +37,9 @@ public class ChatHomeActivity extends AppCompatActivity {
 //        auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
-        usersArrayList = new ArrayList<>();
+        adminArrayList = new ArrayList<>();
 
-        DatabaseReference reference=database.getReference().child("admins");
+        DatabaseReference reference=database.getReference().child("users");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -47,7 +47,7 @@ public class ChatHomeActivity extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot:snapshot.getChildren())
                 {
                     users Users=dataSnapshot.getValue(users.class);
-                    usersArrayList.add(Users);
+                    adminArrayList.add(Users);
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -60,7 +60,7 @@ public class ChatHomeActivity extends AppCompatActivity {
 
         mainUserRecyclerView = findViewById(R.id.recycler_view_chat);
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter=new UserAdapter(ChatHomeActivity.this,usersArrayList);
+        adapter=new AdminmsgAdapter(ChatHomeAdmin.this,adminArrayList);
         mainUserRecyclerView.setAdapter(adapter);
 
     }
