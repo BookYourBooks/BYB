@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_margin="10dp"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/purple_500">
 
         <TextView
             android:id="@+id/order_user_name"
@@ -80,10 +80,13 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
             android:text="Show This Order Products"
             android:textSize="18dp"
             android:layout_below="@+id/order_date_time"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/custom_roundbutton"
             />
 
     </RelativeLayout>

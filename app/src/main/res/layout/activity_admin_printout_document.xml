@@ -8,6 +8,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/document_list"
         android:layout_width="match_parent"
+        android:background="@drawable/admin_login_imagee"
         android:layout_height="match_parent">
 
     </androidx.recyclerview.widget.RecyclerView>

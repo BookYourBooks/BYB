@@ -9,7 +9,7 @@
         android:id="@+id/r2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/purple_500"
         android:layout_alignParentTop="true"
         tools:ignore="MissingConstraints">
 
@@ -29,6 +29,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/orders_list"
+        android:background="@drawable/admin_login_imagee"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/r2"
