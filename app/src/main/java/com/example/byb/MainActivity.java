@@ -169,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
                                 loadingBar.dismiss();
 
                                 Intent intent = new Intent(MainActivity.this, AdminAddActivity.class);
+                                Prevalent.currentonlineusers = usersData;
                                 startActivity(intent);
                             }
                             else if (ParentDbName.equals("users"))

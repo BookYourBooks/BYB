@@ -45,6 +45,7 @@ public class SettingsActivity extends AppCompatActivity {
     private String checker="";
     private ProgressDialog loadingBar;
     private StorageTask uploadtask;
+    private String type = "";
 
 
     @Override
@@ -54,6 +55,12 @@ public class SettingsActivity extends AppCompatActivity {
         storageProfilePictureRef=FirebaseStorage.getInstance().getReference().child("Profile Pictures");
         loadingBar = new ProgressDialog(this);
 
+        Intent intent =getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null)
+        {
+            type = getIntent().getExtras().get("member").toString();
+        }
 
         settings_profile_image=findViewById(R.id.settings_profile_image);
         settings_profile_image_change_btn=findViewById((R.id.settings_profile_image_change_btn));

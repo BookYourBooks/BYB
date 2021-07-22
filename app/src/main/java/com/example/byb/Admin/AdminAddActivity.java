@@ -7,13 +7,15 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.byb.AdminChatActivity;
+import com.example.byb.ChatHomeAdmin;
 import com.example.byb.MainActivity;
 import com.example.byb.R;
 import com.example.byb.home_activity;
 
 public class AdminAddActivity extends AppCompatActivity {
     public Button add_item;
-    private Button login,admin_check_new_order,maintain_btn,photo,documentlink,announcement;
+    private Button login,admin_check_new_order,maintain_btn,photo,documentlink,announcement,messagewithuser_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class AdminAddActivity extends AppCompatActivity {
         photo=(Button)findViewById(R.id.printout_photo);
         announcement=(Button)findViewById(R.id.addannouncement);
         documentlink=(Button)findViewById(R.id.printout_doc);
+        messagewithuser_btn=findViewById(R.id.messagewithuser_btn);
 
 
 
@@ -82,6 +85,13 @@ public class AdminAddActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AdminAddActivity.this, home_activity.class);
                 intent.putExtra("admins","admins");
+                startActivity(intent);
+            }
+        });
+        messagewithuser_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminAddActivity.this, ChatHomeAdmin.class);
                 startActivity(intent);
             }
         });
