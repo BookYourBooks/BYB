@@ -16,12 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB"
         tools:replace="android:theme">
+      
+        <activity android:name=".model.Messages" />
+        <activity android:name=".ChatActivity" />
+        <activity
+            android:name=".ChatHomeActivity"
+            android:theme="@style/Theme.BYB.NoActionBar" />
         <activity android:name=".splash_screen"
             android:theme="@style/Theme.AppCompat.NoActionBar"><intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        </intent-filter> />
+      
         <activity android:name=".user_c_cycle_textbook_maintain" />
         <activity android:name=".user_notebook_maintain" />
         <activity android:name=".ResetPasswordActivity" />

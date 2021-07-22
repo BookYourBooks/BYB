@@ -121,15 +121,16 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
 
 
                         break;
-                    case R.id.nav_user_prints:Intent intent5 = new Intent(home_activity.this , user_personal_printout.class);
+                    case R.id.nav_user_prints:
+                        Intent intent5 = new Intent(home_activity.this , user_personal_printout.class);
                         startActivity(intent5);
                         break;
                     case R.id.nav_categories:
-
+                        Intent intent8 = new Intent(home_activity.this , ChatHomeActivity.class);
+                        startActivity(intent8);
                         break;
                     case R.id.nav_settings:
                         Intent intent2 = new Intent(home_activity.this , SettingsActivity.class);
-
                         startActivity(intent2);
                         break;
                     case R.id.nav_logout:
