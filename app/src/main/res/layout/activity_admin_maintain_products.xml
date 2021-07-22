@@ -14,7 +14,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/admin_login_imagee"
         >
 
 
@@ -30,6 +30,7 @@
             android:id="@+id/product_name_maintain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
             android:layout_below="@+id/product_image_maintain"
             android:hint="Product Name"
             android:textAlignment="center"
@@ -38,9 +39,9 @@
             android:padding="12dp"
             android:layout_margin="5dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24" />
 
         <EditText
             android:id="@+id/product_price_maintain"
@@ -48,15 +49,17 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_name_maintain"
             android:hint="Product price"
+            android:drawableStart="@drawable/ic_baseline_attach_money_24"
+            android:inputType="number"
             android:textAlignment="center"
             android:gravity="center_horizontal"
             android:textSize="22sp"
             android:padding="12dp"
             android:layout_margin="5dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24" />
 
         <EditText
             android:id="@+id/product_description_maintain"
@@ -64,49 +67,57 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_price_maintain"
             android:hint="Product Description"
+            android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24"
             android:textAlignment="center"
             android:gravity="center_horizontal"
             android:textSize="22sp"
             android:padding="12dp"
             android:layout_margin="5dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24" />
+
         <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/apply_changes_btn"
+            android:id="@+id/apply_changes_btn"
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/product_description_maintain"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/product_description_maintain"
+            android:layout_marginTop="50dp"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/custom_button"
+            android:gravity="center_horizontal"
+            android:padding="12dp"
             android:text="Apply Changes"
-        android:textAlignment="center"
-            android:background="@drawable/custom_roundbutton"
-        android:gravity="center_horizontal"
-        android:textSize="18sp"
-        android:padding="12dp"
-        android:layout_margin="5dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
 
-        />
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/admin_delete_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_below="@+id/apply_changes_btn"
             android:text="Delete Item"
             android:textAlignment="center"
             android:gravity="center_horizontal"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
             android:textSize="18sp"
+            android:layout_width="240dp"
+            android:layout_centerHorizontal="true"
             android:padding="12dp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:layout_marginTop="70dp"
             android:layout_marginBottom="100dp"
-            android:background="@drawable/custom_roundbutton"
+            android:background="@drawable/custom_button"
 
-            />
+            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24" />
 
 
 

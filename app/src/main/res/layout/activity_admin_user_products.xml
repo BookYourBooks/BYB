@@ -11,7 +11,7 @@
         android:id="@+id/r3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/purple_500"
         android:layout_alignParentTop="true"
         tools:ignore="MissingConstraints">
 
@@ -20,7 +20,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Products "
+            android:text="PRODUCTS "
+            android:textStyle="italic"
             android:textColor="@android:color/white"
             android:textSize="25dp"
             android:textAlignment="center"
@@ -33,6 +34,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/products_list"
         android:layout_below="@+id/r3"
+        android:background="@drawable/admin_login_imagee"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

@@ -4,32 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/announment_image"
     tools:context=".Admin.admin_announcements">
+
     <EditText
         android:id="@+id/admin_announcement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:inputType="textMultiLine"
-        android:layout_marginTop="20dp"
-        android:hint="Announcement"
-        android:textColorHint="@color/black"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="389dp"
         android:layout_marginRight="50dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_announcement_24"
+        android:drawableLeft="@drawable/ic_baseline_announcement_24"
+        android:hint="             ANNOUNCEMENT"
+        android:inputType="textMultiLine"
         android:padding="20dp"
-        />
-    <Button
+        android:textColorHint="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/admin_announcement_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/admin_announcement"
-        android:layout_marginTop="200dp"
-        android:text="UPDATE"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="65dp"
         android:layout_marginRight="50dp"
+        android:background="@drawable/custom_button"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
         android:padding="17dp"
-        android:textSize="18sp"
+        android:text="UPDATE"
         android:textAllCaps="false"
-        />
+        android:textColor="@color/white"
+        android:textSize="24sp" />
 
 </RelativeLayout>
