@@ -43,11 +43,10 @@ public class testadapter extends RecyclerView.Adapter<testviewholder> {
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull testviewholder holder, int position) {
-        testviewholder.usn.setText(downModels.get(position).getUsn());
+        testviewholder.usn.setText(" USN = " +downModels.get(position).getUsn());
         testviewholder.description.setText(downModels.get(position).getDescription());
-        testviewholder.name.setText(downModels.get(position).getName());
-        testviewholder.link.setText(downModels.get(position).getUrl());
-        testviewholder.copies.setText(downModels.get(position).getNumberofcopies());
+        testviewholder.name.setText(" Name = " +downModels.get(position).getName());
+        testviewholder.copies.setText(" Number of Copies = " +downModels.get(position).getNumberofcopies());
         testviewholder.download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

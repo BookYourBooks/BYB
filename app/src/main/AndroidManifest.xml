@@ -15,12 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB.NoActionBar"
         tools:replace="android:theme">
-        <activity android:name=".AdminChatActivity"></activity>
-        <activity android:name=".ChatHomeAdmin" />
+        <activity android:name=".Admin.AdminChatActivity"></activity>
+        <activity android:name=".Admin.ChatHomeAdmin" />
         <activity android:name=".ChatActivity" />
         <activity
-            android:name=".ChatHomeActivity"
-            android:theme="@style/Theme.BYB.NoActionBar" />
+            android:name=".ChatHomeActivity" />
         <activity
             android:name=".splash_screen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -40,14 +39,22 @@
         <activity android:name=".user_print_upload_document_link" />
         <activity android:name=".user_printout_upload_photo" />
         <activity android:name=".user_personal_printout" />
-        <activity android:name=".user_sem_8_textbook" />
-        <activity android:name=".user_sem_7_textbook" />
-        <activity android:name=".user_sem_6_textbook" />
-        <activity android:name=".user_sem_5_textbook" />
-        <activity android:name=".user_sem_4_textbook" />
-        <activity android:name=".user_sem_3_texrtbook" />
-        <activity android:name=".user_p_cycle_textbook" />
-        <activity android:name=".user_c_cycle_textbook" />
+        <activity android:name=".user_sem_8_textbook"
+            android:theme="@style/Theme.BYB"/>
+        <activity android:name=".user_sem_7_textbook"
+            android:theme="@style/Theme.BYB"/>
+        <activity android:name=".user_sem_6_textbook"
+            android:theme="@style/Theme.BYB"/>
+        <activity android:name=".user_sem_5_textbook"
+            android:theme="@style/Theme.BYB"/>
+        <activity android:name=".user_sem_4_textbook"
+            android:theme="@style/Theme.BYB"/>
+        <activity android:name=".user_sem_3_texrtbook"
+            android:theme="@style/Theme.BYB"/>
+        <activity android:name=".user_p_cycle_textbook"
+            android:theme="@style/Theme.BYB"/>
+        <activity android:name=".user_c_cycle_textbook"
+            android:theme="@style/Theme.BYB"/>
         <activity android:name=".Admin.AdminMaintainProductsActivity" />
         <activity android:name=".Admin.AdminUserProductsActivity" />
         <activity android:name=".Admin.AdminNewOrdersActivity" />
@@ -60,19 +67,23 @@
         <activity android:name=".Admin.AdminAddNewTextbookActivity" />
         <activity
             android:name=".home_activity"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.BYB.NoActionBar" />
-        <activity android:name=".user_record" />
-        <activity android:name=".user_bluebooks" />
-        <activity android:name=".user_files" />
-        <activity android:name=".user_sheets" />
-        <activity android:name=".user_accesssories" />
-        <activity android:name=".user__notebooks" />
+            android:label="@string/title_activity_home" />
+        <activity android:name=".user_record"
+            android:theme="@style/Theme.BYB"/>
+        <activity android:name=".user_bluebooks"
+            android:theme="@style/Theme.BYB"/>
+        <activity android:name=".user_files"
+            android:theme="@style/Theme.BYB" />
+        <activity android:name=".user_sheets"
+            android:theme="@style/Theme.BYB" />
+        <activity android:name=".user_accesssories"
+            android:theme="@style/Theme.BYB" />
+        <activity android:name=".user__notebooks"
+            android:theme="@style/Theme.BYB" />
         <activity android:name=".user_sem_category" />
         <activity android:name=".user_stationary_category" />
         <activity
-            android:name=".SettingsActivity"
-            android:theme="@style/Theme.BYB.NoActionBar" />
+            android:name=".SettingsActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />

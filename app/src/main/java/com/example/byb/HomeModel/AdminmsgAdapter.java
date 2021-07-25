@@ -11,8 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.byb.AdminChatActivity;
-import com.example.byb.ChatActivity;
+import com.example.byb.Admin.AdminChatActivity;
 import com.example.byb.R;
 import com.example.byb.model.users;
 import com.squareup.picasso.Picasso;
@@ -28,7 +27,7 @@ public class AdminmsgAdapter extends RecyclerView.Adapter<AdminmsgAdapter.ViewHo
     ArrayList<users> adminArrayList;
     private ImageView imageView;
 
-    public AdminmsgAdapter(com.example.byb.ChatHomeAdmin ChatHomeAdmin , ArrayList<users> adminArrayList) {
+    public AdminmsgAdapter(com.example.byb.Admin.ChatHomeAdmin ChatHomeAdmin , ArrayList<users> adminArrayList) {
         this.ChatHomeAdmin=ChatHomeAdmin;
         this.adminArrayList=adminArrayList;
     }
