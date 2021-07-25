@@ -26,7 +26,7 @@ public class testviewholder extends RecyclerView.ViewHolder {
         name=itemView.findViewById(R.id.document_name);
         usn= itemView.findViewById(R.id.document_link_usn);
         copies = itemView.findViewById(R.id.document_number_of_copies);
-        link = itemView.findViewById(R.id.document_link);
+        //link = itemView.findViewById(R.id.document_link);
         description=itemView.findViewById(R.id.document_link_description);
         download=itemView.findViewById(R.id.document_download);
     }

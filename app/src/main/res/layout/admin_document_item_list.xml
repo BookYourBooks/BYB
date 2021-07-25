@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="10dp"
-    app:cardElevation="15dp">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@color/purple_700">
+        android:layout_margin="10dp"
+        android:background="@color/purple_500">
 
         <TextView
             android:id="@+id/document_link_usn"
@@ -38,17 +37,18 @@
             android:layout_marginRight="5dp"
             android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/document_link"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Link"
-            android:textColor="@android:color/white"
-            android:textSize="14dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/document_number_of_copies"
-            android:gravity="center"
-            android:layout_marginTop="10dp"/>
+        <!--        <TextView-->
+        <!--            android:id="@+id/document_link"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Link"-->
+        <!--            android:textColor="@android:color/white"-->
+        <!--            android:textSize="14dp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:layout_below="@+id/document_number_of_copies"-->
+        <!--            android:gravity="center"-->
+        <!--            android:layout_marginTop="10dp"/>-->
+
         <TextView
             android:id="@+id/document_name"
             android:layout_width="match_parent"
@@ -57,9 +57,10 @@
             android:textColor="@android:color/white"
             android:textSize="14dp"
             android:textStyle="bold"
-            android:layout_below="@+id/document_link"
+            android:layout_below="@+id/document_number_of_copies"
             android:gravity="center"
             android:layout_marginTop="10dp"/>
+
         <TextView
             android:id="@+id/document_link_description"
             android:layout_width="match_parent"
@@ -71,6 +72,7 @@
             android:layout_below="@+id/document_name"
             android:gravity="center"
             android:layout_marginTop="10dp"/>
+
         <androidx.appcompat.widget.AppCompatButton
             android:background="@drawable/custom_roundbutton"
             android:id="@+id/document_download"
@@ -84,8 +86,7 @@
             android:layout_centerHorizontal="true"
             android:text="DOWNLOAD" />
 
-
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
 
+</RelativeLayout>
