@@ -6,6 +6,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
@@ -31,7 +32,7 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     private Button btnToggleDark;
-    private LinearLayout home_stationery,home_textbooks,home_lab_manual,home_forms;
+    private ConstraintLayout home_stationery,home_textbooks,home_lab_manual,home_forms;
     private String type = "";
 
     @Override
