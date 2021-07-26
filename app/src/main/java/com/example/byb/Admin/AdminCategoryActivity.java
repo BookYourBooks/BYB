@@ -1,6 +1,7 @@
 package com.example.byb.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,7 @@ import android.widget.LinearLayout;
 import com.example.byb.R;
 
 public class AdminCategoryActivity extends AppCompatActivity {
-    private LinearLayout stationary,textbooks,labmanual,forms;
+    private ConstraintLayout stationary,textbooks,labmanual,forms;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
