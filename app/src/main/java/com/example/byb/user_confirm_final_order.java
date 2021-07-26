@@ -101,7 +101,7 @@ public class user_confirm_final_order extends AppCompatActivity {
         ordersMap.put("date", saveCurrentDate);
         ordersMap.put("state", "Not Shipped");
 
-        orderRef.updateChildren(ordersMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        orderRef.child("Products").updateChildren(ordersMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<Void> task) {
                 if (task.isSuccessful())

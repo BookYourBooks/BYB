@@ -168,7 +168,7 @@ public class user_product_detail_activity extends AppCompatActivity {
     private void CheckOrderState()
     {
         DatabaseReference orderref;
-        orderref=FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentonlineusers.getUsn());
+        orderref=FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentonlineusers.getUsn()).child("Products");
         orderref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {

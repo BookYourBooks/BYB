@@ -118,10 +118,11 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
 
 
 
-                    case R.id.nav_orders:
-
-
+                    case R.id.nav_orders:Intent intent4 = new Intent(home_activity.this , User_Order_View.class);
+                        startActivity(intent4);
                         break;
+
+
                     case R.id.nav_user_prints:
                         Intent intent5 = new Intent(home_activity.this , user_personal_printout.class);
                         startActivity(intent5);
