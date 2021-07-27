@@ -40,7 +40,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
   private ProgressDialog loadingBar;
   private String productRandomKey, downloadImageUrl;
   private StorageReference ProductImagesRef;
-  private DatabaseReference ProductRef;
+  private DatabaseReference ProductRef,SearchRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         categoryname=getIntent().getExtras().get("category").toString();
         ProductImagesRef= FirebaseStorage.getInstance().getReference().child("Product Images");
         ProductRef= FirebaseDatabase.getInstance().getReference().child(categoryname);
+        SearchRef= FirebaseDatabase.getInstance().getReference().child("All_Products");
 
 
         loadingBar = new ProgressDialog(this);
@@ -169,6 +170,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                             Toast.makeText(AdminAddNewProductActivity.this, "got the Product image Url Successfully...", Toast.LENGTH_SHORT).show();
 
                             SaveProductInfoToDatabase();
+                            SaveProductInfoToDatabaseforSearch();
                         }
 
                     }
@@ -200,6 +202,36 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                             startActivity(intent);
                             loadingBar.dismiss();
                             Toast.makeText(AdminAddNewProductActivity.this, "Product is added successfully..", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {   loadingBar.dismiss();
+                            String message = task.getException().toString();
+                            Toast.makeText(AdminAddNewProductActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+    }
+    public void SaveProductInfoToDatabaseforSearch(){
+        HashMap<String, Object> productMap = new HashMap<>();
+        productMap.put("pid", productRandomKey);
+        productMap.put("date", saveCurrentDate);
+        productMap.put("time", saveCurrentTime);
+        productMap.put("description", description);
+        productMap.put("image", downloadImageUrl);
+        productMap.put("category",categoryname);
+        productMap.put("price", price);
+        productMap.put("pname", pname);
+
+        SearchRef.child(productRandomKey).updateChildren(productMap)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull  Task<Void> task) {
+                        if (task.isSuccessful())
+                        {
+                            Intent intent = new Intent(AdminAddNewProductActivity.this, AdminStationaryActivity.class);
+                            startActivity(intent);
+                            loadingBar.dismiss();
                         }
                         else
                         {   loadingBar.dismiss();

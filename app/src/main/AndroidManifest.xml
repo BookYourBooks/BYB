@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BYB.NoActionBar"
         tools:replace="android:theme">
-        <activity android:name=".User_Order_View"></activity>
+        <activity android:name=".Admin.SearchProductActivity"></activity>
+        <activity android:name=".User_Order_View" />
         <activity android:name=".Admin.AdminChatActivity" />
         <activity android:name=".Admin.ChatHomeAdmin" />
         <activity android:name=".ChatActivity" />

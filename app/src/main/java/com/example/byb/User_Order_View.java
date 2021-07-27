@@ -60,15 +60,15 @@ public class User_Order_View extends AppCompatActivity {
                         adminOrdersViewHolder.userDateTime.setText("Order at: " + adminOrders.getDate() + "  "+ adminOrders.getTime());
                         adminOrdersViewHolder.userShippingAddress.setText("Shipping Address: " + adminOrders.getAddress() + ", " + adminOrders.getCity());
 
-//                        adminOrdersViewHolder.ShowOrdersBtn.setOnClickListener(new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View v)
-//                            {
-//                                Intent intent = new Intent(User_Order_View.this, AdminUserProductsActivity.class);
-//                                intent.putExtra("USN", adminOrders.getUsn());
-//                                startActivity(intent);
-//                            }
-//                        });
+                        adminOrdersViewHolder.ShowOrdersBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v)
+                            {
+                                Intent intent = new Intent(User_Order_View.this, AdminUserProductsActivity.class);
+                                intent.putExtra("USN", adminOrders.getUsn());
+                                startActivity(intent);
+                            }
+                        });
 
 
                     }
