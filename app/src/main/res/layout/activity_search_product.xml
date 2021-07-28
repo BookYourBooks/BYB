@@ -17,7 +17,7 @@
         android:background="@color/design_default_color_primary"
         android:id="@+id/search_1">
 
-    <EditText
+    <com.rey.material.widget.EditText
         android:layout_height="wrap_content"
         android:layout_width="290dp"
         android:background="@color/white"

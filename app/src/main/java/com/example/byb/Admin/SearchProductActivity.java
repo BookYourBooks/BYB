@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import com.rey.material.widget.EditText;
 
 import com.example.byb.R;
 import com.example.byb.ViewHolder.ProductViewHolder;
@@ -45,7 +45,7 @@ public class SearchProductActivity extends AppCompatActivity {
         SearchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SearchInput=inputText.getText().toString();
+                SearchInput=inputText.getText().toString().toUpperCase();
                 onStart();
             }
         });
@@ -73,7 +73,7 @@ public class SearchProductActivity extends AppCompatActivity {
                             public void onClick(View v) {
                                     Intent intent = new Intent(SearchProductActivity.this, user_product_detail_activity.class);
                                     intent.putExtra("pid",stationary_product.getPid());
-                                    intent.putExtra("category","Blue Books");
+                                    intent.putExtra("category",stationary_product.getCategory());
                                     startActivity(intent);
 
                             }

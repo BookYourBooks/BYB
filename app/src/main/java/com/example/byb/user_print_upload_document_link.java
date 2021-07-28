@@ -104,6 +104,9 @@ public class user_print_upload_document_link extends AppCompatActivity {
                                     public void onSuccess(DocumentReference documentReference) {
                                         Toast.makeText(user_print_upload_document_link.this,"File Uploaded",Toast.LENGTH_SHORT).show();
                                         progressDialog.dismiss();
+                                        Intent intent = new Intent(user_print_upload_document_link.this, home_activity.class);
+                                        startActivity(intent);
+                                        finish();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                             @Override

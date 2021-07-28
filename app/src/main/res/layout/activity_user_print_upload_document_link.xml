@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_below="@id/new_user_number_of_copies_document"
-        android:text="Update"
+        android:text="Upload"
         android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
         android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
         android:layout_marginLeft="50dp"

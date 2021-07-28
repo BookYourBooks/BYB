@@ -88,6 +88,32 @@ public class user_confirm_final_order extends AppCompatActivity {
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
         saveCurrentTime = currentDate.format(CallForDate.getTime());
 
+
+        final DatabaseReference adminorderRef = FirebaseDatabase.getInstance().getReference().child("AdminOrders").child(Prevalent.currentonlineusers.getUsn());
+
+        HashMap<String, Object> adminordersMap = new HashMap<>();
+        adminordersMap.put("totalAmount",totalamount);
+        adminordersMap.put("name", nameEdittext.getText().toString());
+        adminordersMap.put("phone", phoneEditText.getText().toString());
+        adminordersMap.put("address", addressEditText.getText().toString());
+        adminordersMap.put("city", cityEditText.getText().toString());
+        adminordersMap.put("usn", Prevalent.currentonlineusers.getUsn());
+        adminordersMap.put("time", saveCurrentTime);
+        adminordersMap.put("date", saveCurrentDate);
+        adminordersMap.put("state", "Not Shipped");
+
+        adminorderRef.updateChildren(adminordersMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull @NotNull Task<Void> task) {
+                if (task.isSuccessful())
+                {
+                    Toast.makeText(user_confirm_final_order.this, " Placed ", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
         final DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentonlineusers.getUsn());
 
         HashMap<String, Object> ordersMap = new HashMap<>();
