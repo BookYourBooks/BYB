@@ -40,7 +40,7 @@ public class AdminAddNewTextbookActivity extends AppCompatActivity {
     private ProgressDialog loadingBar;
     private String productRandomKey, downloadImageUrl;
     private StorageReference ProductImagesRef;
-    private DatabaseReference ProductRef;
+    private DatabaseReference ProductRef,SearchRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class AdminAddNewTextbookActivity extends AppCompatActivity {
         categoryname=getIntent().getExtras().get("category").toString();
         ProductImagesRef= FirebaseStorage.getInstance().getReference().child("Product Images");
         ProductRef= FirebaseDatabase.getInstance().getReference().child(categoryname);
+        SearchRef= FirebaseDatabase.getInstance().getReference().child("All_Products");
 
 
         loadingBar = new ProgressDialog(this);
@@ -169,6 +170,7 @@ public class AdminAddNewTextbookActivity extends AppCompatActivity {
                             Toast.makeText(AdminAddNewTextbookActivity.this, "got the Product image Url Successfully...", Toast.LENGTH_SHORT).show();
 
                             SaveProductInfoToDatabase();
+                            SaveProductInfoToDatabaseforSearch();
                         }
 
                     }
@@ -210,4 +212,35 @@ public class AdminAddNewTextbookActivity extends AppCompatActivity {
                 });
 
     }
+    public void SaveProductInfoToDatabaseforSearch(){
+        HashMap<String, Object> productMap = new HashMap<>();
+        productMap.put("pid", productRandomKey);
+        productMap.put("date", saveCurrentDate);
+        productMap.put("time", saveCurrentTime);
+        productMap.put("description", description);
+        productMap.put("image", downloadImageUrl);
+        productMap.put("category",categoryname);
+        productMap.put("price", price);
+        productMap.put("pname", pname);
+
+        SearchRef.child(productRandomKey).updateChildren(productMap)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull  Task<Void> task) {
+                        if (task.isSuccessful())
+                        {
+                            Intent intent = new Intent(AdminAddNewTextbookActivity.this, AdminStationaryActivity.class);
+                            startActivity(intent);
+                            loadingBar.dismiss();
+                        }
+                        else
+                        {   loadingBar.dismiss();
+                            String message = task.getException().toString();
+                            Toast.makeText(AdminAddNewTextbookActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+    }
 }
+

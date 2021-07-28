@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.byb.Admin.SearchProductActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
@@ -115,44 +116,42 @@ public class home_activity extends AppCompatActivity implements NavigationView.O
                     case  R.id.nav_cart:Intent intent1 = new Intent(home_activity.this , CartActivity.class);
                         startActivity(intent1);
                         break;
-
-
-
-                    case R.id.nav_orders:Intent intent4 = new Intent(home_activity.this , User_Order_View.class);
+                    case  R.id.nav_search:Intent intent2 = new Intent(home_activity.this , SearchProductActivity.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.nav_orders:Intent intent3 = new Intent(home_activity.this , User_Order_View.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.nav_user_prints:
+                        Intent intent4 = new Intent(home_activity.this , user_personal_printout.class);
                         startActivity(intent4);
                         break;
-
-
-                    case R.id.nav_user_prints:
-                        Intent intent5 = new Intent(home_activity.this , user_personal_printout.class);
-                        startActivity(intent5);
-                        break;
                     case R.id.nav_categories:
-                        Intent intent8 = new Intent(home_activity.this , ChatHomeActivity.class);
-                        startActivity(intent8);
+                        Intent intent5 = new Intent(home_activity.this , ChatHomeActivity.class);
+                        startActivity(intent5);
                         break;
                     case R.id.nav_settings:
 
                     if(type.equals("admins")) {
-                        Intent intent9 = new Intent(home_activity.this , SettingsActivity.class);
+                        Intent intent6 = new Intent(home_activity.this , SettingsActivity.class);
                         intent.putExtra("member","admins");
-                        startActivity(intent9);
+                        startActivity(intent6);
                         break;
 
-                    }else {Intent intent2 = new Intent(home_activity.this , SettingsActivity.class);
+                    }else {Intent intent7 = new Intent(home_activity.this , SettingsActivity.class);
                         intent.putExtra("member","users");
-                        startActivity(intent2);
+                        startActivity(intent7);
                         break;
 
                     }
                     case R.id.nav_logout:
-                        Intent intent3 = new Intent(home_activity.this , MainActivity.class);
+                        Intent intent8 = new Intent(home_activity.this , MainActivity.class);
                         Paper.book().destroy();
-                        startActivity(intent3);
+                        startActivity(intent8);
                         break;
                     case R.id.nav_annnouncements:
-                        Intent intent7 = new Intent(home_activity.this , user_announcements.class);
-                        startActivity(intent7);
+                        Intent intent9 = new Intent(home_activity.this , user_announcements.class);
+                        startActivity(intent9);
                         break;
 
 //Paste your privacy policy link
